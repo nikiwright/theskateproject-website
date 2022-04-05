@@ -19,7 +19,6 @@
         }
 
         h2 {
-            text-align: left;
             font-size: 26px;
         }
 
@@ -31,13 +30,21 @@
         }
 
         #team {
-            text-align: left;
             font-size: 18px;
-            float: left;
         }
         
         img {
             height: 300px;
+        }
+        .teamleft{
+            text-align: left;
+            float: left;
+            width:100%;
+        }
+        .teamright{
+            text-align: right;
+            float: right;
+            width:100%;
         }
     </style>
 </head>
@@ -65,17 +72,33 @@
     <br><br>
     <h1>Meet the team!</h1>
     <div id="team">
-        <img src="andrew portrait.jpeg">
-        <h2>Andrew Kim</h2>
-        <strong>Skills: </strong> UI/UX Designer, Graphic Design, Coder & Programmer, Design Thinking, Product Management
+        <div class="teamleft">
+            <img src="andrew portrait.jpeg">
+            <h2>Andrew Kim</h2>
+            <strong>Skills: </strong> UI/UX Designer, Graphic Design, Coder & Programmer, Design Thinking, Product Management
+        </div> 
+        <br><br><hr><br>
+            <div class="teamright">
+                <img src="ddwright portrait.jpeg">
+                <h2>Niki Wright</h2>
+                <strong>Skills: </strong> Organization & Management, Graphic Design, Leadership, Coder & Programmer, Innovative Thinker
+            </div>
+        <br><br><hr><br>
+            <div class="teamleft">
+                <img src="austin portrait.jpeg">
+                <h2>Austin Li</h2>
+                <strong>Skills: </strong> Graphic Design, Logo Design, Design Thinking, Product Management, Branding
+            </div>
         
         <br><br><hr><br>
-
-        <img src="ddwright portrait.jpeg">
-        <h2>Niki Wright</h2>
-        <strong>Skills: </strong> Organization & Management, Graphic Design, Leadership, Coder & Programmer, Innovative Thinker
-
+            <div class="teamright">
+                <img src="yaya portrait.jpeg">
+                <h2>Ayonnah Tinsley</h2>
+                <strong>Skills: </strong> Design strategy, branding, logo design, organization, critical thinker, coder
+            </div>
         <br><br><hr><br>
+
+
 
         
     </div>
