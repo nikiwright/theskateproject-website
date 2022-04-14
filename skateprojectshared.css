@@ -1,0 +1,123 @@
+
+
+
+
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.sidebar {
+    height: 100%;
+    width: 0px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: whitesmoke;
+    opacity: 0.8;
+}
+
+.bar {
+    display: block;
+    height: 5px;
+    width: 50px;
+    background-color: #EC6439;
+    margin: 10px auto;
+
+    -webkit-transition: all .7s ease;
+    -moz-transition: all .7s ease;
+    -ms-transition: all .7s ease;
+    -o-transition: all .7s ease;
+    transition: all .7s ease;
+}
+
+.button {
+    cursor: pointer;
+    display: inline-block;
+    width: auto;
+    margin: 0 auto;
+
+    -webkit-transition: all .7s ease;
+    -moz-transition: all .7s ease;
+    -ms-transition: all .7s ease;
+    -o-transition: all .7s ease;
+    transition: all .7s ease;
+
+    position: fixed;
+    right: 40px;
+    top: 20px;
+    z-index: 3;
+}
+
+.middle {
+    margin: 0 auto;
+}
+
+.button.active .top {
+    -webkit-transform: translateY(15px) rotateZ(45deg);
+    -moz-transform: translateY(15px) rotateZ(45deg);
+    -ms-transform: translateY(15px) rotateZ(45deg);
+    -o-transform: translateY(15px) rotateZ(45deg);
+    transform: translateY(15px) rotateZ(45deg);
+    
+}
+
+.button.active .bottom {
+    -webkit-transform: translateY(-15px) rotateZ(-45deg);
+    -moz-transform: translateY(-15px) rotateZ(-45deg);
+    -ms-transform: translateY(-15px) rotateZ(-45deg);
+    -o-transform: translateY(-15px) rotateZ(-45deg);
+    transform: translateY(-15px) rotateZ(-45deg);
+    
+}
+
+.button.active .middle {
+    width: 0;
+}
+
+.move-to-left {
+    right: 0;
+    transition: 2s;
+    z-index: 2;
+    height: 100%;
+    width: 30%;
+}
+
+nav {
+    padding-top: 30px;
+}
+
+.sidebar-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    margin-top: 150px;
+    text-align: center;
+}
+
+.sidebar-item {
+    margin: 30px 0;
+    opacity: 0;
+}
+
+.sidebar-item.active {
+    opacity: 1;
+}
+
+.sidebar-anchor {
+    color: black;
+    text-decoration: none;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 7px;
+}
+
+.sidebar-anchor:hover {
+    color: #EC6439
+}
+
