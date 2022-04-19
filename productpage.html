@@ -400,6 +400,57 @@
         });
         // end of sidebar script
 
+        //bubble function
+
+        function bubble1() {
+            $("#chatBubble1").delay(21000)
+                .animate({
+                    opacity: "1",
+                    marginLeft: "70%",
+                }, 3000)
+                .animate({ top: 50 }, 1000)
+                .animate({ top: 5 }, 1000)
+                .animate({ top: 50 }, 1000)
+                .animate({ top: 5 }, 1000)
+                .animate({
+                    opacity: "0",
+                    marginLeft: "60%",
+                }, 3000)
+        }
+
+        function bubble2() {
+            $("#chatBubble2").delay(21000)
+                .animate({
+                    opacity: "1",
+                    marginLeft: "76%",
+                }, 3000)
+                .animate({ top: 70 }, 1000)
+                .animate({ top: 7 }, 1000)
+                .animate({ top: 70 }, 1000)
+                .animate({ top: 7 }, 1000)
+                .animate({
+                    opacity: "0",
+                    marginLeft: "88%",
+                }, 3000)
+        }
+
+        function dots() {
+            $("#chatDots").delay(21000)
+                .animate({
+                    opacity: "1",
+                    marginLeft: "72.5%",
+                }, 3000)
+                .animate({ top: 50 }, 1000)
+                .animate({ top: 10 }, 1000)
+                .animate({ top: 50 }, 1000)
+                .animate({ top: 10 }, 1000)
+                .animate({
+                    opacity: "0",
+                    marginLeft: "62.5%",
+                }, 3000)
+        }
+        //
+
         //start of demo animation 
         $("#demobox1").hide();
         $("#demobox2").hide();
@@ -429,57 +480,15 @@
             }, 2000);
             $("#demobox2").delay(21000).fadeIn(2000);
             $("#chatFeature").delay(21000).fadeIn(1000);
+            $("#chatButton").delay(20000).animate({
+                opacity: "1",
+            });
 
             // chatbubble start 
-            function bubble1() {
-                $("#chatBubble1").delay(21000)
-                    .animate({
-                        opacity: "1",
-                        marginLeft: "70%",
-                    }, 3000)
-                    .animate({ top: 50 }, 1000)
-                    .animate({ top: 5 }, 1000)
-                    .animate({ top: 50 }, 1000)
-                    .animate({ top: 5 }, 1000)
-                    .animate({
-                        opacity: "0",
-                        marginLeft: "60%",
-                    }, 3000)
-            }
             bubble1();
 
-            function bubble2() {
-                $("#chatBubble2").delay(21000)
-                    .animate({
-                        opacity: "1",
-                        marginLeft: "76%",
-                    }, 3000)
-                    .animate({ top: 70 }, 1000)
-                    .animate({ top: 7 }, 1000)
-                    .animate({ top: 70 }, 1000)
-                    .animate({ top: 7 }, 1000)
-                    .animate({
-                        opacity: "0",
-                        marginLeft: "88%",
-                    }, 3000)
-            }
             bubble2();
 
-            function dots() {
-                $("#chatDots").delay(21000)
-                    .animate({
-                        opacity: "1",
-                        marginLeft: "72.5%",
-                    }, 3000)
-                    .animate({ top: 50 }, 1000)
-                    .animate({ top: 10 }, 1000)
-                    .animate({ top: 50 }, 1000)
-                    .animate({ top: 10 }, 1000)
-                    .animate({
-                        opacity: "0",
-                        marginLeft: "62.5%",
-                    }, 3000)
-            }
             dots();
             // chatbubble end
 
@@ -496,6 +505,19 @@
             $("#demobox3").delay(32000).fadeIn(2000);
             $("#engageFeature").delay(32000).fadeIn(1000);
 
+
+
+
+            $("#spotButton").delay(47000).animate({
+                opacity: "0",
+            }, 2000);
+            $("#demobox3").delay(47000).fadeOut(2000);
+            $("#engageFeature").delay(47000).fadeOut(1000);
+            $("#demobox1").delay(50000).fadeOut();
+
+            // $(document).delay(5000).queue(function(){
+            //     alert(1);
+            // })
         });
         // end of demo animation 
 
