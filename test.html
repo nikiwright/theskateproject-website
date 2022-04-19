@@ -1,0 +1,106 @@
+<style>
+    #chatBubble1 {
+        width: 12%;
+        margin-left: 60%;
+        margin-top: 5%;
+        position: absolute;
+        opacity: 0;
+    }
+
+    #chatBubble2 {
+        width: 12%;
+        margin-left: 88%;
+        margin-top: 5%;
+        position: absolute;
+        opacity: 0;
+    }
+
+    #chatDots {
+        width: 7%;
+        margin-left: 62%;
+        margin-top: 10%;
+        position: absolute;
+        opacity: 0;
+    }
+
+    .bubble {
+        width: 100%;
+    }
+</style>
+
+
+<body>
+    <div id="chatBubble2">
+        <img class="bubble" src="bubble2.png">
+    </div>
+
+    <div id="chatBubble1">
+        <img class="bubble" src="bubble1.png">
+    </div>
+
+    <div id="chatDots">
+        <img class="bubble" src="chatdots.png">
+    </div>
+</body>
+
+
+<script src="http://iyawebdev.com/jquery.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+
+<script>
+
+    $(function () {
+
+        function bubble1() {
+            $("#chatBubble1")
+                .animate({
+                    opacity: "1",
+                    marginLeft: "70%",
+                }, 3000,)
+                .animate({ top: 50 }, 1000)
+                .animate({ top: 5 }, 1000)
+                .animate({ top: 50 }, 1000)
+                .animate({ top: 5 }, 1000)
+                .animate({
+                    opacity: "0",
+                    marginLeft: "60%",
+                }, 3000)
+        }
+        bubble1();
+
+        function bubble2() {
+            $("#chatBubble2")
+                .animate({
+                    opacity: "1",
+                    marginLeft: "76%",
+                }, 3000,)
+                .animate({ top: 70 }, 1000)
+                .animate({ top: 7 }, 1000)
+                .animate({ top: 70 }, 1000)
+                .animate({ top: 7 }, 1000)
+                .animate({
+                    opacity: "0",
+                    marginLeft: "88%",
+                }, 3000)
+        }
+        bubble2();
+
+        function dots() {
+            $("#chatDots")
+                .animate({
+                    opacity: "1",
+                    marginLeft: "72.5%",
+                }, 3000, )
+                .animate({ top: 50 }, 1000)
+                .animate({ top: 10 }, 1000)
+                .animate({ top: 50 }, 1000)
+                .animate({ top: 10 }, 1000)
+                .animate({
+                    opacity: "0",
+                    marginLeft: "62.5%",
+                }, 3000)
+        }
+        dots();
+    });
+</script>
