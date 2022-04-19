@@ -94,6 +94,8 @@
         }
 
         #learnmore {
+            color: white;
+            text-decoration: none;
             font-weight: bold;
         }
 
@@ -168,8 +170,8 @@
 
         <div id="logo">
             <a href="skateprojecthomepage.html">
-            <img src="logo.png">
-        </a>
+                <img src="logo.png">
+            </a>
         </div>
 
         <div id="titleshadow">
@@ -202,7 +204,11 @@
             The Skate Project is a social app aimed at providing skaters with easier access to skate spots near them, as
             well as connect them to other members of the skateboarding community.
 
-            <p id="learnmore"><em>Learn more</em></p>
+            <p>
+                <a href="productpage.html" id="learnmore">
+                    <em>Learn more</em>
+                </a>
+            </p>
         </div>
 
         <hr>
@@ -246,30 +252,28 @@
 <script src="http://iyawebdev.com/jquery.js"></script>
 
 <script>
-    $(document).ready(function () {
+    // start sidebar script
+    $(".hiddenFirst").hide();
 
-        $(".hiddenFirst").hide();
-
-        $("#itemParent").on("mouseover", function () {
-            $(".hiddenFirst").show();
-        });
-        $("#itemParent").on("mouseout", function () {
-            $(".hiddenFirst").hide();
-        });
-
-        function toggleSidebar() {
-            $(".button").toggleClass("active");
-            $(".sidebar").toggleClass("move-to-left");
-            // $(".move-to-left").css("z-index", 2);
-            // $(".button").css("z-index", 3);
-            $(".sidebar-item").toggleClass("active");
-        }
-
-        $(".button").on("click tap", function () {
-            toggleSidebar();
-        });
-
+    $("#itemParent").on("mouseover", function () {
+        $(".hiddenFirst").show();
     });
+    $("#itemParent").on("mouseout", function () {
+        $(".hiddenFirst").hide();
+    });
+
+    function toggleSidebar() {
+        $(".button").toggleClass("active");
+        $(".sidebar").toggleClass("move-to-left");
+        // $(".move-to-left").css("z-index", 2);
+        // $(".button").css("z-index", 3);
+        $(".sidebar-item").toggleClass("active");
+    }
+
+    $(".button").on("click tap", function () {
+        toggleSidebar();
+    });
+// end of sidebar script
 </script>
 
 </html>
