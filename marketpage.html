@@ -1,0 +1,155 @@
+<html>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&display=swap" rel="stylesheet">
+
+<link href="skateprojectshared.css" rel="stylesheet" type="text/css" />
+
+<head>
+    <title>Market</title>
+
+    <style>
+        #title {
+            width: 600px;
+            height: 500px;
+            margin-left: 100px;
+            margin-top: 250px;
+            font-size: 26pt;
+            color: rgb(61, 61, 61);
+        }
+
+        #smallfont {
+            font-size: 16pt;
+            margin-left: 10px;
+            margin-top: -40px;
+        }
+
+        #rightimage {
+            width: 800px;
+            height: 1200px;
+            margin-top: -50px;
+            float: right;
+            background-size: 100%;
+            background-image: url(market\ skater.jpg);
+        }
+
+        .tab {
+            margin-left: 10px;
+        }
+
+        .longtab {
+            margin-left: 40px;
+        }
+
+        @media screen and (max-width: 1240px) {
+
+            .button {
+                right: 5%;
+                top: 8%;
+            }
+
+            .move-to-left {
+                width: 32%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="sitecontainer">
+
+        <div id="logo">
+            <a href="skateprojecthomepage.html">
+                <img src="logo.png">
+            </a>
+        </div>
+
+        <nav>
+            <div class="button" id="btn">
+                <div style="visibility: visible" class="bar top"></div>
+                <div class="bar middle"></div>
+                <div class="bar bottom"></div>
+            </div>
+        </nav>
+
+        <div class="button" id="btn">
+            <div class="bar top"></div>
+            <div class="bar middle"></div>
+            <div class="bar bottom"></div>
+        </div>
+
+        <div id="rightimage">
+            hello
+        </div>
+
+        <div id="title">
+            <h1>INDUSTRY</h1>
+            <div id="smallfont"> 2022 Skateboarding market size: <strong>$2.19 billion</strong></div>
+            <h4 class="tab">Competitors</h4>
+            <div id="smallfont">
+                <ul>
+                    <li>findskatespots.com</li>
+                    <li>Loke</li>
+                    <li>ShredSpots</li>
+                    <li>Skatespots App</li>
+                    <li>Young and Social</li>
+                    <li>Street Skaters</li>
+                </ul>
+            </div>
+            <br>
+            <h1>TARGET MARKET</h1>
+            <div class="tab">Skaters in urban areas that struggle finding skate spots</div>
+        </div>
+
+        <!-- nav-right -->
+        <div class="sidebar">
+            <ul class="sidebar-list">
+                <li class="sidebar-item"><a href="#" class="sidebar-anchor">The Problem</a></li>
+                <li class="sidebar-item"><a href="productpage.html" class="sidebar-anchor">Product</a></li>
+                <li class="sidebar-item"><a href="skateprojectmarketpage.html" class="sidebar-anchor">Market</a></li>
+                <li class="sidebar-item"><a href="businesspilotpage.html" class="sidebar-anchor">Business Pilot</a></li>
+                <li class="sidebar-item"><a href="#" class="sidebar-anchor">Next Steps</a></li>
+                <li class="sidebar-item"><a href="#" class="sidebar-anchor">Our Ask</a></li>
+                <div id="itemParent">
+                    <li class="sidebar-item" style="margin-bottom: 15px"><a href="#" class="sidebar-anchor"> About Us
+                        </a>
+                    </li>
+                    <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="#" class="sidebar-mini"> Skate Team
+                        </a>
+                    </div>
+                    <div class="hiddenFirst"> <a href="#" class="sidebar-mini"> Web Team </a></div>
+                </div>
+            </ul>
+        </div>
+
+</body>
+
+<script src="http://iyawebdev.com/jquery.js"></script>
+
+<script>
+    // start sidebar script
+    $(".hiddenFirst").hide();
+
+    $("#itemParent").on("mouseover", function () {
+        $(".hiddenFirst").show();
+    });
+    $("#itemParent").on("mouseout", function () {
+        $(".hiddenFirst").hide();
+    });
+
+    function toggleSidebar() {
+        $(".button").toggleClass("active");
+        $(".sidebar").toggleClass("move-to-left");
+        // $(".move-to-left").css("z-index", 2);
+        // $(".button").css("z-index", 3);
+        $(".sidebar-item").toggleClass("active");
+    }
+
+    $(".button").on("click tap", function () {
+        toggleSidebar();
+    });
+// end of sidebar script
+</script>
+
+</html>

@@ -1,0 +1,527 @@
+<html>
+
+<head>
+    <title>The Product</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&display=swap" rel="stylesheet">
+
+    <link href="skateprojectshared.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        html {
+            background-image: url(productpagebg.jpeg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+        }
+
+        #title {
+            /* border: red solid 1px; */
+            font-size: 45pt;
+            color: white;
+            font-weight: bold;
+            position: absolute;
+            width: 36%;
+            margin-left: 5%;
+            margin-top: 12%;
+        }
+
+        #bio {
+            /* border: red solid 1px; */
+            font-size: 18pt;
+            color: white;
+            position: absolute;
+            width: 75%;
+            margin-left: 10%;
+            margin-top: 22%;
+        }
+
+        #parentDemo {
+            /* border: blue solid 2px; */
+            width: 100%;
+            position: relative;
+            margin-top: 32%;
+            height: 100%;
+        }
+
+        #demoButton {
+            border: #EC6439 solid 2px;
+            border-radius: 10px;
+            color: white;
+            font-size: 20pt;
+            font-weight: bold;
+            background-color: #EC6439;
+            position: absolute;
+            margin-left: 45%;
+            width: 10%;
+            height: auto;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #demoButton:hover {
+            color: #EC6439;
+            background-color: white;
+            opacity: 0.8;
+        }
+
+        #demobox1 {
+            /* border: red solid 1px; */
+            position: absolute;
+            width: 25%;
+            margin-left: 55%;
+        }
+
+        #chatButton {
+            border: #EC6439 solid 4px;
+            border-radius: 10px;
+            position: absolute;
+            margin-top: 186%;
+            margin-left: 69%;
+            width: 18%;
+            height: 8%;
+            opacity: 0;
+        }
+
+        #spotButton {
+            border: #EC6439 solid 4px;
+            border-radius: 10px;
+            position: absolute;
+            margin-top: 142%;
+            margin-left: 7%;
+            width: 76%;
+            height: 17%;
+            opacity: 0;
+        }
+
+        #demobox2 {
+            /* border: yellow solid 1px; */
+            position: absolute;
+            width: 25%;
+            margin-left: 35%;
+        }
+
+        #demobox3 {
+            /* border: green solid 1px; */
+            position: absolute;
+            width: 25%;
+            margin-left: 35%;
+        }
+
+        .demoimg {
+            width: 100%;
+            height: 100%;
+        }
+
+        #findFeature {
+            /* border: 1px red solid; */
+            position: absolute;
+            width: 30%;
+            padding: 15px;
+            margin-left: 15%;
+            margin-top: 10%;
+            color: black;
+            text-align: center;
+            background-color: whitesmoke;
+            opacity: 0.8;
+            border-radius: 10px;
+        }
+
+        .engFeature {
+            /* border: 1px red solid; */
+            position: absolute;
+            width: 25%;
+            padding: 15px;
+            margin-left: 65%;
+            margin-top: 22%;
+            color: black;
+            text-align: center;
+            background-color: whitesmoke;
+            opacity: 0.8;
+            border-radius: 10px;
+        }
+
+        .bigFeature {
+            font-size: 25pt;
+            opacity: 1;
+            font-weight: bold;
+        }
+
+        .smallFeature {
+            font-size: 14pt;
+            opacity: 1;
+        }
+
+        #chatBubble1 {
+            width: 12%;
+            margin-left: 60%;
+            margin-top: 5%;
+            position: absolute;
+            opacity: 0;
+        }
+
+        #chatBubble2 {
+            width: 12%;
+            margin-left: 88%;
+            margin-top: 5%;
+            position: absolute;
+            opacity: 0;
+        }
+
+        #chatDots {
+            width: 7%;
+            margin-left: 62%;
+            margin-top: 10%;
+            position: absolute;
+            opacity: 0;
+        }
+
+        .bubble {
+            width: 100%;
+        }
+
+        #location {
+            font-size: 14pt;
+            color: white;
+            font-weight: bold;
+            position: absolute;
+            left: 75%;
+            top: 170%;
+            padding-bottom: 2%;
+        }
+
+        @media screen and (max-width: 1240px) {
+            #title {
+                font-size: 45pt;
+                width: 62%;
+                margin-top: 18%;
+            }
+
+            #bio {
+                font-size: 18pt;
+                width: 60%;
+                margin-top: 35%;
+            }
+
+            #location {
+                left: 58%;
+                top: 98%;
+            }
+
+            #parentDemo {
+                margin-top: 60%;
+                height: 50%;
+            }
+
+        }
+
+        @media screen and (max-width: 400px) {
+            #title {
+                font-size: 42pt;
+                width: 62%;
+                margin-top: 24%;
+            }
+
+            #bio {
+                font-size: 18pt;
+                width: 60%;
+                margin-top: 40%;
+            }
+
+            #location {
+                left: 58%;
+                top: 98%;
+            }
+
+            #parentDemo {
+                margin-top: 80%;
+                height: 50%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="sitecontainer">
+
+        <div id="logo">
+            <a href="skateprojecthomepage.html">
+                <img src="logo.png">
+            </a>
+        </div>
+
+        <nav>
+            <div class="button" id="btn">
+                <div style="visibility: visible" class="bar top"></div>
+                <div class="bar middle"></div>
+                <div class="bar bottom"></div>
+            </div>
+        </nav>
+
+        <!--start-->
+        <div id="title">
+            OUR SOLUTION IS THE SKATE PROJECT
+        </div>
+
+        <div id="bio">
+            Obviously, our website won't get you to skate like Tyshawn, but the important thing here is to focus on
+            building that skater community! Our application makes it easier for all skaters, from pros to beginners, to
+            connect to each other all across California. Click 'Start Demo' below to explore the user interface of our
+            application and learn more
+            about its features.
+        </div>
+
+        <div id="parentDemo">
+
+            <div id="demoButton">
+                Start Demo
+            </div>
+
+            <div id="demobox1">
+                <div id="spotButton"></div>
+                <div id="chatButton"></div>
+                <img class="demoimg" src="demo1.png">
+            </div>
+
+            <div id="demobox2">
+                <img class="demoimg" src="demo2.png">
+            </div>
+
+            <div id="demobox3">
+                <img class="demoimg" src="demo3.png">
+            </div>
+
+            <div id="findFeature">
+                <p class="bigFeature">APP Interface</p>
+                <p class="smallFeature">The map interface feature allows users to search for their city or
+                    hometown, and all of the street spots in that area would be displayed. Other than directions to
+                    those spots, users will be able to see photos, videos, and reviews by other skaters on each skate
+                    spot, to know what it looks like and if it's the right place for them. Additionally, users of the
+                    app will be displayed on the map depending on the spot they are currently at. </p>
+            </div>
+
+            <div id="chatBubble2">
+                <img class="bubble" src="bubble2.png">
+            </div>
+
+            <div id="chatBubble1">
+                <img class="bubble" src="bubble1.png">
+            </div>
+
+            <div id="chatDots">
+                <img class="bubble" src="chatdots.png">
+            </div>
+
+            <div id="chatFeature" class="engFeature">
+                <p class="bigFeature">Chat</p>
+                <p class="smallFeature">The chat feature of the app will allow users to talk to each other through
+                    private or group chats. This will help skaters meet at spots, get to know each other, and organize
+                    group skating events wherever they please.</p>
+            </div>
+
+            <div id="engageFeature" class="engFeature">
+                <p class="bigFeature">Engagement Feature</p>
+                <p class="smallFeature">Users are also able to add their
+                    own skate spots to the map. Once reviewed, these spots would then be released for the entire
+                    community
+                    to enjoy. Users will also be able to upload their own pictures, videos, and
+                    reviews on every spot, helping other skaters find the perfect place.</p>
+            </div>
+
+
+        </div>
+
+        <div id="location">
+            Mount McCarthy skate park, Los Angeles, CA
+        </div>
+
+    </div>
+
+    <!--Outside sitecontainer i.e invisible until called-->
+    <div class="button" id="btn">
+        <div class="bar top"></div>
+        <div class="bar middle"></div>
+        <div class="bar bottom"></div>
+    </div>
+
+    <!-- nav-right -->
+    <div class="sidebar">
+        <ul class="sidebar-list">
+            <li class="sidebar-item"><a href="problempage.html" class="sidebar-anchor">The Problem</a></li>
+            <li class="sidebar-item"><a href="productpage.html" class="sidebar-anchor">Product</a></li>
+            <li class="sidebar-item"><a href="marketpage.html" class="sidebar-anchor">Market</a></li>
+            <li class="sidebar-item"><a href="businesspilotpage.html" class="sidebar-anchor">Business Pilot</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-anchor">Next Steps</a></li>
+            <li class="sidebar-item"><a href="askpage.html" class="sidebar-anchor">Our Ask</a></li>
+            <div id="itemParent">
+                <li class="sidebar-item" style="margin-bottom: 15px"><a href="#" class="sidebar-anchor"> About Us </a>
+                </li>
+                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="#" class="sidebar-mini"> Skate Team </a>
+                </div>
+                <div class="hiddenFirst"> <a href="#" class="sidebar-mini"> Web Team </a></div>
+            </div>
+        </ul>
+    </div>
+
+</body>
+
+<script src="http://iyawebdev.com/jquery.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        // start of sidebar script
+        $(".hiddenFirst").hide();
+
+        $("#itemParent").on("mouseover", function () {
+            $(".hiddenFirst").show();
+        });
+        $("#itemParent").on("mouseout", function () {
+            $(".hiddenFirst").hide();
+        });
+
+        function toggleSidebar() {
+            $(".button").toggleClass("active");
+            $(".sidebar").toggleClass("move-to-left");
+            // $(".move-to-left").css("z-index", 2);
+            // $(".button").css("z-index", 3);
+            $(".sidebar-item").toggleClass("active");
+        }
+
+        $(".button").on("click tap", function () {
+            toggleSidebar();
+        });
+        // end of sidebar script
+
+        //bubble function
+
+        function bubble1() {
+            $("#chatBubble1").delay(21000)
+                .animate({
+                    opacity: "1",
+                    marginLeft: "70%",
+                }, 3000)
+                .animate({ top: 50 }, 1000)
+                .animate({ top: 5 }, 1000)
+                .animate({ top: 50 }, 1000)
+                .animate({ top: 5 }, 1000)
+                .animate({
+                    opacity: "0",
+                    marginLeft: "60%",
+                }, 3000)
+        }
+
+        function bubble2() {
+            $("#chatBubble2").delay(21000)
+                .animate({
+                    opacity: "1",
+                    marginLeft: "76%",
+                }, 3000)
+                .animate({ top: 70 }, 1000)
+                .animate({ top: 7 }, 1000)
+                .animate({ top: 70 }, 1000)
+                .animate({ top: 7 }, 1000)
+                .animate({
+                    opacity: "0",
+                    marginLeft: "88%",
+                }, 3000)
+        }
+
+        function dots() {
+            $("#chatDots").delay(21000)
+                .animate({
+                    opacity: "1",
+                    marginLeft: "72.5%",
+                }, 3000)
+                .animate({ top: 50 }, 1000)
+                .animate({ top: 10 }, 1000)
+                .animate({ top: 50 }, 1000)
+                .animate({ top: 10 }, 1000)
+                .animate({
+                    opacity: "0",
+                    marginLeft: "62.5%",
+                }, 3000)
+        }
+        //
+
+        //start of demo animation 
+        $("#demobox1").hide();
+        $("#demobox2").hide();
+        $("#demobox3").hide();
+        $("#findFeature").hide();
+        $(".engFeature").hide();
+
+        $("#demoButton").on("click", function () {
+            $("#demobox1").fadeIn();
+            $("#findFeature").fadeIn();
+            $("#demoButton").fadeOut();
+
+            //demo 1
+            $("#demobox1").delay(20000).animate({
+                marginLeft: "7%",
+                width: "22%",
+                marginTop: "4%",
+            }, 2000);
+
+            $("#findFeature")
+                .delay(20000)
+                .fadeOut();
+
+            //  demo 2
+            $("#demoButton").delay(20000).animate({
+                opacity: "1",
+            }, 2000);
+            $("#demobox2").delay(21000).fadeIn(2000);
+            $("#chatFeature").delay(21000).fadeIn(1000);
+            $("#chatButton").delay(20000).animate({
+                opacity: "1",
+            });
+
+            // chatbubble start 
+            bubble1();
+
+            bubble2();
+
+            dots();
+            // chatbubble end
+
+            $("#chatButton").delay(10000).animate({
+                opacity: "0",
+            });
+            $("#demobox2").delay(12000).fadeOut(2000);
+            $("#chatFeature").delay(11000).fadeOut(0);
+
+            //demo 3
+            $("#spotButton").delay(30000).animate({
+                opacity: "1",
+            }, 2000);
+            $("#demobox3").delay(32000).fadeIn(2000);
+            $("#engageFeature").delay(32000).fadeIn(1000);
+
+
+
+
+            $("#spotButton").delay(47000).animate({
+                opacity: "0",
+            }, 2000);
+            $("#demobox3").delay(47000).fadeOut(2000);
+            $("#engageFeature").delay(47000).fadeOut(1000);
+            $("#demobox1").delay(50000).fadeOut();
+
+            // $(document).delay(5000).queue(function(){
+            //     alert(1);
+            // })
+        });
+        // end of demo animation 
+
+    });
+</script>
+
+</html>
