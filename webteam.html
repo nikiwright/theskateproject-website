@@ -14,7 +14,7 @@
 
     <style>
         html {
-            background-image: url(webteambg.jpeg);
+            background-image: url(webteambg.png);
             background-size: cover;
             background-repeat: no-repeat;
             -webkit-background-size: cover;
@@ -22,52 +22,23 @@
             -o-background-size: cover;
         }
 
-        #title {
-            font-size: 65pt;
-            color: #EC6439;
-            font-family: Druk Wide;
-            position: absolute;
-            margin-left: 12%;
-            margin-top: 4%;
-        }
-
-        #titleshadow {
-            font-size: 65pt;
-            color: white;
-            font-family: Druk Wide;
-            position: absolute;
-            margin-left: 11.7%;
-            margin-top: 3.7%;
-        }
-
-        #textboxL {
-            /* border: red solid 1px; */
-            position: absolute;
-            font-size: 70pt;
-            color: white;
-            font-weight: bold;
-            width: 40%;
-            margin-left: 5%;
-            margin-top: 32%;
-            opacity: 0.85;
-        }
-
         #textboxM {
             /* border: red solid 1px; */
             position: absolute;
-            font-size: 40pt;
+            font-size: 55pt;
             color: white;
             font-weight: bold;
-            left: 10%;
+            left: 7%;
             top: 75%;
             opacity: 0.85;
         }
+
         #textboxM2 {
             position: absolute;
-            font-size: 40pt;
+            font-size: 55pt;
             color: black;
             font-weight: bold;
-            left: 40%;
+            left: 49%;
             top: 85%;
             opacity: 0.85;
             }
@@ -79,34 +50,18 @@
             font-size: 9pt;
             color: white;
             width: 40%;
-            margin-left: 55%;
-            margin-top: 30%;
-        }
-
-        hr {
-            position: absolute;
-            width: 18%;
-            margin-left: 5%;
-            margin-top: 48%;
-            border: 2px solid white;
+            margin-left: 53%;
+            margin-top: 37%;
         }
 
         #location {
             font-size: 14pt;
             color: white;
-            font-weight: lighter;
+            font-weight: bold;
             position: absolute;
             left: 5%;
-            top: 108%;
+            top: 118%;
             padding-bottom: 2%;
-        }
-
-        #learnmore {
-            font-weight: bold;
-        }
-
-        #learnmore:hover {
-            color: #ffa98f;
         }
 
         .circle1{
@@ -118,7 +73,7 @@
             background-color: grey;
             position:relative;
             left: 10%;
-            top: 20%;
+            top: 40%;
         }
         .circle2{
             width:250px;
@@ -129,19 +84,19 @@
             background-color: grey;
             position:relative;
             left: 30%;
-            top: -7.5%;
+            top: 7%;
         }
         .circle3{
             width:150px;
             width:250px;
             height:250px;
             border-radius: 50%;
-            background-image: url(ddwright\ portrait.jpeg);
+            background-image: url( niki\ portrait.jpeg);
             background-size: 100%;
             background-color: grey;
             position:relative;
             left: 50%;
-            top: -34.5%;
+            top: -25.5%;
         }
         .circle4{
             width:250px;
@@ -153,7 +108,7 @@
             background-color: grey;
             position:relative;
             left: 70%;
-            top: -61.5%;
+            top: -55.5%;
         }
         .name{
             text-align: center;
@@ -162,61 +117,17 @@
         }
 
         @media screen and (max-width: 1240px) {
-            body {
-                background-size: cover;
-            }
+        
 
             #logo {
                 width: 6%;
                 left: 5%;
             }
 
-            #title {
-                font-size: 35pt;
-                margin-left: 15%;
-                margin-top: 10%;
-            }
-
-            #titleshadow {
-                font-size: 35pt;
-                margin-left: 14.7%;
-                margin-top: 9.7%;
-            }
-
-
-            #textboxL {
-                font-size: 60pt;
-                width: 55%;
-                margin-top: 42%;
-            }
-
-            #textboxM {
-                font-size: 40pt;
-                width: 40%;
-                left: 10%;
-                top: 70%;
-                opacity: 0.85;
-                text-align: center;
-            }
-
-            #textboxS {
-                font-size: 14pt;
-                width: 25%;
-                margin-top: 65%;
-                margin-left: 32%;
-            }
-
-            hr {
-                width: 20%;
-                margin-top: 65%;
-                margin-left: 8%;
-            }
-
             #location {
                 left: 58%;
                 top: 95%;
             }
-
 
         }
     </style>
@@ -228,9 +139,10 @@
 
         <div id="logo">
             <a href="skateprojecthomepage.html">
-            <img src="logo.png">
-        </a>
+                <img src="logo.png">
+            </a>
         </div>
+
         <nav>
             <div class="button" id="btn">
                 <div style="visibility: visible" class="bar top"></div>
@@ -291,22 +203,22 @@
     <!-- nav-right -->
     <div class="sidebar">
         <ul class="sidebar-list">
-            <li class="sidebar-item"><a href="#" class="sidebar-anchor">The Problem</a></li>
+            <li class="sidebar-item"><a href="problempage.html" class="sidebar-anchor">The Problem</a></li>
             <li class="sidebar-item"><a href="productpage.html" class="sidebar-anchor">Product</a></li>
-            <li class="sidebar-item"><a href="#" class="sidebar-anchor">Market</a></li>
-            <li class="sidebar-item"><a href="#" class="sidebar-anchor">Business Pilot</a></li>
+            <li class="sidebar-item"><a href="marketpage.html" class="sidebar-anchor">Market</a></li>
+            <li class="sidebar-item"><a href="businesspilotpage.html" class="sidebar-anchor">Business Pilot</a></li>
             <li class="sidebar-item"><a href="#" class="sidebar-anchor">Next Steps</a></li>
-            <li class="sidebar-item"><a href="#" class="sidebar-anchor">Our Ask</a></li>
+            <li class="sidebar-item"><a href="askpage.html" class="sidebar-anchor">Our Ask</a></li>
             <div id="itemParent">
                 <li class="sidebar-item" style="margin-bottom: 15px"><a href="#" class="sidebar-anchor"> About Us </a>
                 </li>
-                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="#" class="sidebar-mini"> Skate Team </a>
+                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="skateteam.html" class="sidebar-mini"> Skate Team </a>
                 </div>
-                <div class="hiddenFirst"> <a href="#" class="sidebar-mini"> Web Team </a></div>
+                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="webteam.html" class="sidebar-mini"> Web Team </a></div>
+                <div class="hiddenFirst" > <a href="#" class="sidebar-mini"> Behind the Scenes </a></div>
             </div>
         </ul>
     </div>
-
 
 </body>
 
