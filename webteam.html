@@ -20,6 +20,7 @@
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
+            background-color: rgb(22, 22, 22);
         }
 
         #textboxM {
@@ -41,7 +42,7 @@
             left: 49%;
             top: 85%;
             opacity: 0.85;
-            }
+        }
 
         #textboxM3 {
             /* border: red solid 1px; */
@@ -54,70 +55,174 @@
             margin-top: 37%;
         }
 
-        #location {
-            font-size: 14pt;
-            color: white;
-            font-weight: bold;
-            position: absolute;
-            left: 5%;
-            top: 118%;
-            padding-bottom: 2%;
-        }
-
-        .circle1{
-            width:250px;
-            height:250px;
+        .circle1 {
+            width: 250px;
+            height: 250px;
             border-radius: 50%;
             background-image: url(austin\ portrait.jpeg);
             background-size: 100%;
             background-color: grey;
-            position:relative;
+            position: relative;
             left: 10%;
             top: 40%;
         }
-        .circle2{
-            width:250px;
-            height:250px;
+
+        .circle2 {
+            width: 250px;
+            height: 250px;
             border-radius: 50%;
             background-image: url(yaya\ portrait.jpeg);
             background-size: 100%;
             background-color: grey;
-            position:relative;
+            position: relative;
             left: 30%;
             top: 7%;
         }
-        .circle3{
-            width:150px;
-            width:250px;
-            height:250px;
+
+        .circle3 {
+            width: 150px;
+            width: 250px;
+            height: 250px;
             border-radius: 50%;
-            background-image: url( niki\ portrait.jpeg);
+            background-image: url(niki\ portrait.jpeg);
             background-size: 100%;
             background-color: grey;
-            position:relative;
+            position: relative;
             left: 50%;
             top: -25.5%;
         }
-        .circle4{
-            width:250px;
-            height:250px;
+
+        .circle4 {
+            width: 250px;
+            height: 250px;
             border-radius: 50%;
             background-image: url(andrew\ portrait.jpeg);
             background-size: 200%;
             background-position: center;
             background-color: grey;
-            position:relative;
+            position: relative;
             left: 70%;
             top: -55.5%;
         }
-        .name{
+
+        .name {
             text-align: center;
             padding-top: 100%;
-            color:white;
+            color: white;
+        }
+
+        #workbreakdown {
+            width: 90%;
+            margin-left: 5%;
+            top: 135%;
+            background-color: whitesmoke;
+            opacity: 0.8;
+            padding: 50px;
+            position: absolute;
+            border-radius: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .column {
+            float: left;
+            width: 25%;
+            height: 200px;
+            font-size: 15pt;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        #downarrow {
+            width: 5%;
+            position: absolute;
+            top: 113%;
+            left: 45%;
+            opacity: 0.80;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        #location {
+            font-size: 14pt;
+            color: white;
+            font-weight: bold;
+            position: absolute;
+            left: 3%;
+            top: 120%;
+            padding-bottom: 2%;
         }
 
         @media screen and (max-width: 1240px) {
-        
+
+            #textboxM {
+                font-size: 35pt;
+                left: 4%;
+                top: 73%;
+            }
+
+            #textboxM2 {
+                font-size: 35pt;
+                left: 46%;
+                top: 80%;
+            }
+
+            #textboxM3 {
+                font-size: 7pt;
+                width: 50%;
+                margin-left: 45%;
+                margin-top: 86%;
+            }
+
+            .circle1 {
+                width: 200px;
+                height: 200px;
+                left: 7%;
+                top: 47%;
+            }
+
+            .circle2 {
+                width: 200px;
+                height: 200px;
+                left: 20%;
+                top: 5%;
+            }
+
+            .circle3 {
+                width: 200px;
+                height: 200px;
+                left: 50%;
+                top: 10%;
+            }
+
+            .circle4 {
+                width: 200px;
+                height: 200px;
+                left: 70%;
+                top: -30%;
+            }
+
+            #downarrow {
+                top: 93%;
+            }
+
+            #workbreakdown {
+                width: 90%;
+                margin-left: 5%;
+                top: 105%;
+            }
+
+            .column {
+                font-size: 12pt;
+            }
 
             #logo {
                 width: 6%;
@@ -125,8 +230,8 @@
             }
 
             #location {
-                left: 58%;
-                top: 95%;
+                left: 2%;
+                top: 97%;
             }
 
         }
@@ -159,35 +264,86 @@
             <h1>WEB TEAM</h1>
         </div>
         <div id="textboxM3">
-            <h1>The web team for The Skate Project has had the amazing opportunity to design and code this website. We designed this website with the intention of not only allowing any future investors to get a chance great look into the skating community, but also showcase the future of skating communities.</h1>
+            <h1>The web team for The Skate Project has had the amazing opportunity to design and code this website. We
+                designed this website with the intention of not only allowing any future investors to get a chance great
+                look into the skating community, but also showcase the future of skating communities.</h1>
         </div>
 
         <div class="circle1">
             <div class="name">
                 <h2>AUSTIN LI</h2>
+                <h3>Scripter</h3>
             </div>
         </div>
 
         <div class="circle2">
             <div class="name">
                 <h2>AYONNAH TINSLEY</h2>
+                <h3>Web Designer</h3>
             </div>
         </div>
-        
+
         <div class="circle3">
             <div class="name">
                 <h2>NIKI WRIGHT</h2>
+                <h3>Web Developer</h3>
             </div>
         </div>
 
         <div class="circle4">
             <div class="name">
                 <h2>ANDREW KIM</h2>
+                <h3>UI/UX Designer</h3>
             </div>
+        </div>
+
+        <div id="downarrow">
+            <img src="downarrow.png">
         </div>
 
         <div id="location">
             Mount McCarthy skate park, Los Angeles, CA
+        </div>
+
+
+        <div id="workbreakdown">
+            <h2 style="font-size: 30pt; text-align: center; text-decoration: underline;">Assignment Breakdown</h2>
+
+            <div class="row">
+                <div class="column">
+                    <h2>Austin</h2>
+                    <ul>
+                        <li>Medium Routine Scripting</li>
+                        <li>JS Chart Interactivity</li>
+                        <li>HTML Scripting</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h2>Ayonnah</h2>
+                    <ul>
+                        <li>Design Layout</li>
+                        <li>Customization Javascripting</li>
+                        <li>Motion Graphics</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h2>Niki</h2>
+                    <ul>
+                        <li>CSS Design & Responsivity</li>
+                        <li>Javascript Presentation Animation</li>
+                        <li>Major Routine Javascripting</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h2>Andrew</h2>
+                    <ul>
+                        <li>Digital Design</li>
+                        <li>Photo Gallery Interactivity</li>
+                        <li>HTML Scripting & Responsivity </li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
 
     </div>
@@ -210,12 +366,16 @@
             <li class="sidebar-item"><a href="#" class="sidebar-anchor">Next Steps</a></li>
             <li class="sidebar-item"><a href="askpage.html" class="sidebar-anchor">Our Ask</a></li>
             <div id="itemParent">
-                <li class="sidebar-item" style="margin-bottom: 15px"><a href="#" class="sidebar-anchor"> About Us </a>
+                <li class="sidebar-item" style="margin-bottom: 15px"><a href="#" class="sidebar-anchor"> About Us
+                    </a>
                 </li>
-                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="skateteam.html" class="sidebar-mini"> Skate Team </a>
+                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="skateteam.html" class="sidebar-mini">
+                        Skate Team </a>
                 </div>
-                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="webteam.html" class="sidebar-mini"> Web Team </a></div>
-                <div class="hiddenFirst" > <a href="#" class="sidebar-mini"> Behind the Scenes </a></div>
+                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="webteam.html" class="sidebar-mini">
+                        Web
+                        Team </a></div>
+                <div class="hiddenFirst"> <a href="#" class="sidebar-mini"> Behind the Scenes </a></div>
             </div>
         </ul>
     </div>

@@ -80,7 +80,7 @@
             border: #EC6439 solid 4px;
             border-radius: 10px;
             position: absolute;
-            margin-top: 186%;
+            margin-top: 185%;
             margin-left: 69%;
             width: 18%;
             height: 8%;
@@ -180,8 +180,23 @@
             opacity: 0;
         }
 
-        .bubble {
+        .graphic {
             width: 100%;
+        }
+
+        #skatergraphic {
+            opacity: 0;
+            width: 12%;
+            position: absolute;
+            margin-left: 86%;
+        }
+
+        #pointer {
+            opacity: 0;
+            width: 3%;
+            position: absolute;
+            left: 50%;
+            top: 7%;
         }
 
         #location {
@@ -197,14 +212,14 @@
         @media screen and (max-width: 1240px) {
             #title {
                 font-size: 45pt;
-                width: 62%;
+                width: 65%;
                 margin-top: 18%;
             }
 
             #bio {
-                font-size: 18pt;
-                width: 60%;
-                margin-top: 35%;
+                font-size: 16pt;
+                width: 64%;
+                margin-top: 36%;
             }
 
             #location {
@@ -213,8 +228,13 @@
             }
 
             #parentDemo {
-                margin-top: 60%;
+                margin-top: 58%;
                 height: 50%;
+            }
+
+            #demoButton {
+                margin-left: 40%;
+                width: 18%;
             }
 
         }
@@ -299,23 +319,22 @@
 
             <div id="findFeature">
                 <p class="bigFeature">APP Interface</p>
-                <p class="smallFeature">The map interface feature allows users to search for their city or
-                    hometown, and all of the street spots in that area would be displayed. Other than directions to
-                    those spots, users will be able to see photos, videos, and reviews by other skaters on each skate
-                    spot, to know what it looks like and if it's the right place for them. Additionally, users of the
-                    app will be displayed on the map depending on the spot they are currently at. </p>
+                <p class="smallFeature">The map feature on the app allows users to search for their city or
+                    hometown, and have all of the street spots in that area be displayed. The location of
+                    different users will be
+                    displayed on the map, allowing users to see the popularity of each given spot. </p>
             </div>
 
             <div id="chatBubble2">
-                <img class="bubble" src="bubble2.png">
+                <img class="graphic" src="bubble2.png">
             </div>
 
             <div id="chatBubble1">
-                <img class="bubble" src="bubble1.png">
+                <img class="graphic" src="bubble1.png">
             </div>
 
             <div id="chatDots">
-                <img class="bubble" src="chatdots.png">
+                <img class="graphic" src="chatdots.png">
             </div>
 
             <div id="chatFeature" class="engFeature">
@@ -323,6 +342,10 @@
                 <p class="smallFeature">The chat feature of the app will allow users to talk to each other through
                     private or group chats. This will help skaters meet at spots, get to know each other, and organize
                     group skating events wherever they please.</p>
+            </div>
+
+            <div id="skatergraphic">
+                <img class="graphic" src="skatergraphic.png">
             </div>
 
             <div id="engageFeature" class="engFeature">
@@ -334,12 +357,29 @@
                     reviews on every spot, helping other skaters find the perfect place.</p>
             </div>
 
+            <div id="pointer">
+                <img class="graphic" src="click.png">
+            </div>
 
         </div>
 
         <div id="location">
             Mount McCarthy skate park, Los Angeles, CA
         </div>
+
+        <!--Audio-->
+
+        <audio id="mapaudio">
+            <source type="audio/mp3" src="mapfeature.mp3">
+        </audio>
+
+        <audio id="chataudio">
+            <source type="audio/mp3" src="chatfeature.mp3">
+        </audio>
+
+        <audio id="engageaudio">
+            <source type="audio/mp3" src="engagefeature.mp3">
+        </audio>
 
     </div>
 
@@ -360,12 +400,15 @@
             <li class="sidebar-item"><a href="#" class="sidebar-anchor">Next Steps</a></li>
             <li class="sidebar-item"><a href="askpage.html" class="sidebar-anchor">Our Ask</a></li>
             <div id="itemParent">
-                <li class="sidebar-item" style="margin-bottom: 15px"><a href="#" class="sidebar-anchor"> About Us </a>
+                <li class="sidebar-item" style="margin-bottom: 15px"><a href="#" class="sidebar-anchor"> About Us
+                    </a>
                 </li>
-                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="skateteam.html" class="sidebar-mini"> Skate Team </a>
+                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="skateteam.html" class="sidebar-mini">
+                        Skate Team </a>
                 </div>
-                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="webteam.html" class="sidebar-mini"> Web Team </a></div>
-                <div class="hiddenFirst" > <a href="#" class="sidebar-mini"> Behind the Scenes </a></div>
+                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="webteam.html" class="sidebar-mini">
+                        Web Team </a></div>
+                <div class="hiddenFirst"> <a href="#" class="sidebar-mini"> Behind the Scenes </a></div>
             </div>
         </ul>
     </div>
@@ -412,28 +455,69 @@
             $("#demobox1").fadeIn();
             $("#findFeature").fadeIn();
             $("#demoButton").fadeOut();
+            $("#mapaudio").trigger("play");
+
+            //pointer 1
+            $("#pointer").delay(2000).animate({
+                opacity: "1",
+                left: "58.5%",
+                top: "16%",
+            }, 2000);
+            $("#pointer").delay(4000).animate({
+                left: "61%",
+                top: "34%",
+            }, 2000);
+            $("#pointer").delay(500).animate({
+                left: "73%",
+                top: "25%",
+            }, 2000);
+            $("#pointer").delay(500).animate({
+                left: "75%",
+                top: "38%",
+            }, 2000);
+            $("#pointer").delay(500).animate({
+                opacity: "0",
+            }, 1000);
 
             //demo 1
-            $("#demobox1").delay(20000).animate({
+            $("#demobox1").delay(16000).animate({
                 marginLeft: "7%",
                 width: "22%",
                 marginTop: "4%",
             }, 2000);
 
             $("#findFeature")
-                .delay(20000)
+                .delay(16000)
                 .fadeOut();
 
             //  demo 2
-            $("#demoButton").delay(20000).animate({
+            $("#chatButton").delay(16000).animate({
                 opacity: "1",
             }, 2000);
-            $("#demobox2").delay(21000).fadeIn(2000);
-            $("#chatFeature").delay(21000).fadeIn(1000);
+            $("#demobox2").delay(17000).fadeIn(2000);
+            $("#chatFeature").delay(16000).fadeIn(1000);
+
+            setTimeout(function () {
+                $("#chataudio").trigger("play")
+            }, 18000);
+
+            //pointer 2
+            $("#pointer").delay(3000).animate({
+                opacity: "1",
+                left: "55%",
+                top: "25%",
+            }, 2000);
+            $("#pointer").delay(500).animate({
+                left: "55%",
+                top: "35%",
+            }, 1000);
+            $("#pointer").delay(500).animate({
+                opacity: "0",
+            }, 2000);
 
             // chatbubble start 
             function bubble1() {
-                $("#chatBubble1").delay(21000)
+                $("#chatBubble1").delay(19000)
                     .animate({
                         opacity: "1",
                         marginLeft: "70%",
@@ -450,7 +534,7 @@
             bubble1();
 
             function bubble2() {
-                $("#chatBubble2").delay(21000)
+                $("#chatBubble2").delay(19000)
                     .animate({
                         opacity: "1",
                         marginLeft: "76%",
@@ -467,7 +551,7 @@
             bubble2();
 
             function dots() {
-                $("#chatDots").delay(21000)
+                $("#chatDots").delay(19000)
                     .animate({
                         opacity: "1",
                         marginLeft: "72.5%",
@@ -488,30 +572,94 @@
                 opacity: "0",
             });
             $("#demobox2").delay(12000).fadeOut(2000);
-            $("#chatFeature").delay(11000).fadeOut(0);
+            $("#chatFeature").delay(12000).fadeOut(1000);
 
             //demo 3
-            $("#spotButton").delay(30000).animate({
+            $("#spotButton").delay(29000).animate({
                 opacity: "1",
             }, 2000);
-            $("#demobox3").delay(32000).fadeIn(2000);
-            $("#engageFeature").delay(32000).fadeIn(1000);
 
-            $("#spotButton").delay(47000).animate({
+            $("#skatergraphic").delay(30000).animate({
+                opacity: "1",
+                right: 100,
+            }, 3000)
+                .animate({
+                    right: 500,
+                    top: 160,
+                }, 3000)
+                .animate({
+                    opacity: "0",
+                    right: 10,
+                    top: 20,
+                }, 3000)
+                .animate({
+                    opacity: "1",
+                    right: 100,
+                }, 3000)
+                .animate({
+                    right: 500,
+                    top: 160,
+                }, 3000)
+                .animate({
+                    opacity: "0",
+                    right: 10,
+                    top: 20,
+                }, 3000);
+
+            $("#demobox3").delay(31000).fadeIn(2000);
+            $("#engageFeature").delay(31000).fadeIn(1000);
+
+            setTimeout(function () {
+                $("#engageaudio").trigger("play")
+            }, 32000);
+
+            //pointer 3
+            $("#pointer").delay(7500).animate({
+                opacity: "1",
+                left: "47%",
+                top: "93%",
+            }, 2000);
+            $("#pointer").delay(6500).animate({
+                left: "43%",
+                top: "35%",
+            }, 1000);
+            $("#pointer").delay(200).animate({
+                left: "50%",
+                top: "35%",
+            }, 1000);
+            $("#pointer").delay(200).animate({
+                left: "51%",
+                top: "73%",
+            }, 1000);
+            $("#pointer").delay(500).animate({
+                opacity: "0",
+            }, 1000);
+
+            $("#spotButton").delay(17000).animate({
                 opacity: "0",
             }, 2000);
-            $("#demobox3").delay(47000).fadeOut(2000);
-            $("#engageFeature").delay(47000).fadeOut(1000);
-            $("#demobox1").delay(50000).fadeOut();
+            $("#engageFeature").delay(17000).fadeOut();
+            $("#demobox3").delay(16000).fadeOut();
+            $("#demobox1").delay(31000).fadeOut();
 
-            // $(document).delay(5000).queue(function(){
-            //     alert(1);
-            // })
-
-        });
-        // end of demo animation 
+        }); // end of demo animation 
 
     });
+
+    $(document).delay(51000).queue(function () {
+        $("#demoButton").animate({
+            backgroundColor: "#EC6439",
+            color: "white",
+            opacity: "1",
+        }).fadeIn();
+
+        $("#demobox1").animate({
+            marginLeft: "55%",
+            width: "25%",
+            marginTop: "0%",
+        })
+    });
+
 </script>
 
 </html>

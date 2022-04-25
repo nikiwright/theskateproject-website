@@ -2,33 +2,30 @@
 
 
 <head>
-    <!-- <title>The Skate Project: Problem Page</title> -->
+    <title>The Problem</title>
 
     <link href="skateprojectshared.css" rel="stylesheet" type="text/css" />
 
     <style>
         #righttextcontainer {
-            height: 100%;
+            height: 110%;
             width: 65%;
             background-color: rgb(255, 255, 255);
             position: absolute;
-            left: 510px;
+            left: 35%;
             top: 0;
+            z-index: 2;
         }
 
         #leftimage {
             width: 35%;
-            height: 100%;
-            padding: 0;
-            margin: 0;
-            bottom: 0;
+            height: 110%;
             position: relative;
             top: 0;
             /* border: 2px solid red; */
         }
 
         #leftimg {
-            /* width: 100%; */
             overflow: hidden;
             height: 100%;
         }
@@ -41,39 +38,53 @@
             color: black;
             text-align: right;
             float: right;
-            margin: 30px;
+            margin: 5%;
             position: relative;
             overflow: none;
-
         }
 
         #toptext {
             float: left;
-            margin-bottom: 10;
-            font-size: 25px;
-            margin-top: 175px;
-            left: 10px;
+            font-size: 25pt;
+            margin-top: 18%;
+            left: 1%;
         }
 
         #middletext {
-            margin-top: -75px;
-            font-size: 100px;
+            margin-top: -2%;
+            font-size: 80pt;
             width: 78%;
-            left: -25px;
-            top: 75px;
+            right: 7%;
+            top: 7%;
             line-height: 80px;
-            /* text-align:right; 
-            */
         }
 
         #bottomtext {
             width: 53%;
-            height: 35%;
-            margin-top: 125px;
-            font-size: 20px;
-            right: 50px;
-            top: 25px;
+            margin-top: 6%;
+            font-size: 18pt;
+            right: 7%;
         }
+
+        @media screen and (max-width: 1240px) {
+            #toptext {
+                margin-top: 35%;
+                width: 60%;
+            }
+
+            #middletext {
+                margin-top: -8%;
+                width: 70%;
+            }
+
+            #bottomtext {
+                margin-top: 20%;
+                font-size: 20pt;
+            }
+
+        }
+
+        @media screen and (max-width: 400px) {}
     </style>
 
 
@@ -113,7 +124,7 @@
                         audiences of all ages. It's even made it as an event at the Olympics! But skaters shouldn't be
                         reduced to the literal streets to practice their craft. <br> <br>
 
-                        This is what The Skate Project comes in. An online service that strives to connect skaters to
+                        This is where The Skate Project comes in. An online service that strives to connect skaters to
                         safe, fun, and legit skate spots all over California. </div>
 
                 </div>
@@ -144,10 +155,12 @@
             <div id="itemParent">
                 <li class="sidebar-item" style="margin-bottom: 15px"><a href="#" class="sidebar-anchor"> About Us </a>
                 </li>
-                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="skateteam.html" class="sidebar-mini"> Skate Team </a>
+                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="skateteam.html" class="sidebar-mini">
+                        Skate Team </a>
                 </div>
-                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="webteam.html" class="sidebar-mini"> Web Team </a></div>
-                <div class="hiddenFirst" > <a href="#" class="sidebar-mini"> Behind the Scenes </a></div>
+                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="webteam.html" class="sidebar-mini"> Web
+                        Team </a></div>
+                <div class="hiddenFirst"> <a href="#" class="sidebar-mini"> Behind the Scenes </a></div>
             </div>
         </ul>
     </div>
