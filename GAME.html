@@ -320,14 +320,13 @@
             <li class="sidebar-item"><a href="#" class="sidebar-anchor">Next Steps</a></li>
             <li class="sidebar-item"><a href="askpage.html" class="sidebar-anchor">Our Ask</a></li>
             <div id="itemParent">
-                <li class="sidebar-item" style="margin-bottom: 15px"><a href="#" class="sidebar-anchor"> About Us
-                    </a>
+                <li class="sidebar-item" style="margin-bottom: 15px"><a class="sidebar-anchor"> About Us </a>
                 </li>
                 <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="skateteam.html" class="sidebar-mini">
                         Skate Team </a>
                 </div>
-                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="webteam.html" class="sidebar-mini">
-                        Web Team </a></div>
+                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="webteam.html" class="sidebar-mini"> Web
+                        Team </a></div>
                 <div class="hiddenFirst"> <a href="#" class="sidebar-mini"> Behind the Scenes </a></div>
             </div>
         </ul>
@@ -443,9 +442,7 @@
 
         if (pin.left > (field.left - 20) && pin.left < (field.left + 20) && pin.top + 10 > (field.top - 20) && pin.top < (field.top + 20)) {
             $(".draggable").attr('src', 'correct.png');
-
             $(".zoneimg").show();
-
             $("#correctsf").trigger("play");
             x++
             $("#score").html("Score: " + x + "/8");
@@ -472,9 +469,7 @@
         if (x > score) {
             const name = prompt('You got a highscore! Enter name:');
             localStorage.setItem("score", x.toString())
-            document.querySelector("#highScores").innerHTML = name + ': ' + x + '/8';
-        } else {
-            alert("Try again to beat your last score!")
+            document.querySelector("#highScores").innerHTML = x;
         }
 
     }
@@ -486,10 +481,6 @@
     $("#checkButton").on("click", function () {
         check();
     });
-
-
-
-
 
 </script>
 
