@@ -1,0 +1,201 @@
+<html>
+
+
+<head>
+    <title>The Web Team</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&display=swap" rel="stylesheet">
+
+    <link href="skateprojectshared.css" rel="stylesheet" type="text/css" />
+
+
+    <style>
+        html {
+            background-image: url(Nextsteps.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+        }
+
+        #textboxM {
+            /* border: red solid 1px; */
+            position: absolute;
+            font-size: 90pt;
+            color: white;
+            font-weight: bold;
+            margin-left: 5%;
+            opacity: 0.85;
+        }
+
+        #textboxM3 {
+            /* border: red solid 1px; */
+            position: absolute;
+            text-align: left;
+            font-size: 9pt;
+            color: white;
+            width: 40%;
+            margin-top: 37%;
+            margin-left: 5%;
+        }
+
+        #textbox4 {
+            /* border: red solid 1px; */
+            position: absolute;
+            text-align: left;
+            font-size: 9pt;
+            color: white;
+            width: 40%;
+            margin-top: 37%;
+            margin-left: 50%;
+        }
+
+        #textbox5 {
+            /* border: red solid 1px; */
+            position: absolute;
+            text-align: left;
+            font-size: 9pt;
+            color: white;
+            width: 40%;
+            margin-top: 37%;
+            margin-left: 88%;
+        }
+
+        #location {
+            font-size: 14pt;
+            color: white;
+            font-weight: bold;
+            position: absolute;
+            left: 5%;
+            top: 118%;
+            padding-bottom: 2%;
+        }
+
+
+        @media screen and (max-width: 1240px) {
+
+            #textboxM {
+                font-size: 60pt;
+                margin-left: 10%;
+            }
+
+            #textboxM3 {
+                margin-top: 90%;
+                width: 40%;
+                margin-left: 10%;
+            }
+
+            #logo {
+                width: 6%;
+                left: 5%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="sitecontainer">
+
+        <div id="logo">
+            <a href="skateprojecthomepage.html">
+                <img src="logo.png">
+            </a>
+        </div>
+
+        <nav>
+            <div class="button" id="btn">
+                <div style="visibility: visible" class="bar top"></div>
+                <div class="bar middle"></div>
+                <div class="bar bottom"></div>
+            </div>
+        </nav>
+
+        <!--start-->
+        <div id="textboxM">
+            <h1>NEXT STEPS</h1>
+        </div>
+        <div id="textboxM3">
+            <h1>- Phase 1<br>App Development, etc</h1>
+        </div>
+        <div id="textbox4">
+            <h1>- Phase 2<br>Info</h1>
+        </div>
+        <div id="textbox5">
+            <h1>- Phase 3<br>Info</h1>
+        </div>
+
+
+        <div id="location">
+            Mount McCarthy skate park, Los Angeles, CA
+        </div>
+
+    </div>
+
+    <!--Outside sitecontainer i.e invisible until called-->
+
+    <div class="button" id="btn">
+        <div class="bar top"></div>
+        <div class="bar middle"></div>
+        <div class="bar bottom"></div>
+    </div>
+
+    <!-- nav-right -->
+    <div class="sidebar">
+        <ul class="sidebar-list">
+            <li class="sidebar-item"><a href="problempage.html" class="sidebar-anchor">The Problem</a></li>
+            <li class="sidebar-item"><a href="productpage.html" class="sidebar-anchor">Product</a></li>
+            <li class="sidebar-item"><a href="marketpage.html" class="sidebar-anchor">Market</a></li>
+            <li class="sidebar-item"><a href="businesspilotpage.html" class="sidebar-anchor">Business Pilot</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-anchor">Next Steps</a></li>
+            <li class="sidebar-item"><a href="askpage.html" class="sidebar-anchor">Our Ask</a></li>
+            <div id="itemParent">
+                <li class="sidebar-item" style="margin-bottom: 15px"><a href="#" class="sidebar-anchor"> About Us </a>
+                </li>
+                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="skateteam.html" class="sidebar-mini">
+                        Skate Team </a>
+                </div>
+                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="webteam.html" class="sidebar-mini"> Web
+                        Team </a></div>
+                <div class="hiddenFirst"> <a href="#" class="sidebar-mini"> Behind the Scenes </a></div>
+            </div>
+        </ul>
+    </div>
+
+</body>
+
+<script src="http://iyawebdev.com/jquery.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $(".hiddenFirst").hide();
+
+        $("#itemParent").on("mouseover", function () {
+            $(".hiddenFirst").show();
+        });
+        $("#itemParent").on("mouseout", function () {
+            $(".hiddenFirst").hide();
+        });
+
+        function toggleSidebar() {
+            $(".button").toggleClass("active");
+            $(".sidebar").toggleClass("move-to-left");
+            // $(".move-to-left").css("z-index", 2);
+            // $(".button").css("z-index", 3);
+            $(".sidebar-item").toggleClass("active");
+        }
+
+        $(".button").on("click tap", function () {
+            toggleSidebar();
+        });
+
+    });
+</script>
+
+</html>

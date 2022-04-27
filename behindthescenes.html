@@ -1,0 +1,287 @@
+<html>
+
+
+<head>
+    <title>The Web Team</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&display=swap" rel="stylesheet">
+
+    <link href="skateprojectshared.css" rel="stylesheet" type="text/css" />
+
+
+    <style>
+        body {
+            background-color: black;
+        }
+
+        #orange {
+            color: rgb(221, 102, 23);
+        }
+
+        #textboxM {
+            /* border: red solid 1px; */
+            position: absolute;
+            font-size: 55pt;
+            color: white;
+            font-weight: bold;
+            left: 7%;
+            top: 10%;
+            opacity: 0.85;
+        }
+
+        .name {
+            text-align: center;
+            padding-top: 100%;
+            color: white;
+        }
+
+        .imagebox {
+            float: left;
+            background-color: rgb(194, 109, 76);
+            padding: 9px;
+            margin: 12px;
+            width: 16.5%;
+            border-radius: 9px;
+        }
+
+        #main {
+            width: 96.5%;
+        }
+
+        .bigbox {
+            width: 96.5%;
+        }
+
+        .imagebox img {
+            width: 100%;
+        }
+
+        #container {
+            width: 1200px;
+            border-radius: 12px;
+            background-color: rgb(204, 135, 78);
+            text-align: center;
+            margin: auto;
+        }
+
+        @media screen and (max-width: 1240px) {
+
+
+            #logo {
+                width: 6%;
+                left: 5%;
+            }
+
+            #location {
+                left: 58%;
+                top: 95%;
+            }
+
+        }
+    </style>
+
+    <script src="http://iyawebdev.com/jquery.js"></script>
+
+    <script>
+
+
+        var gallerytitle = "Skate Project Behind the Scenes Gallery";
+
+        var gallery = {
+            "title": "Behind the Scenes",
+            "imagedata": [
+                {
+                    "url": "SkateTeam.png",
+                    "caption": "Skate Project Team",
+                },
+
+                {
+                    "url": "MarcosSkating.png",
+                    "caption": "Marcos Skating",
+                },
+                {
+                    "url": "SkateWebsite.png",
+                    "caption": "The Skate Project Consumer Website P1",
+                },
+                {
+                    "url": "SkatePage2.png",
+                    "caption": "The Skate Project Consumer Website P2",
+                },
+                {
+                    "url": "SkatePage3.png",
+                    "caption": "The Skate Project Consumer Website P3",
+                },
+
+            ] 
+        } 
+
+        var loadgallery = function () {
+
+            $("#thumbs").html("");
+
+            $("#title").html(gallery.title);
+
+            updateimage(gallery.imagedata[0].url, gallery.imagedata[0].caption, gallery.imagedata[0].credit);
+
+            thumbcode = "";
+
+            for (i = 0; i < gallery.imagedata.length; i++) {
+                thumbcode += "<div class='imagebox'>"
+                thumbcode += "<img src='" + gallery.imagedata[i].url + "' class='thumbimg' index='" + i + "'>";
+                thumbcode += "</div>";
+            }
+
+            $("#thumbs").html(thumbcode);
+
+            $(".thumbimg").on("mouseover", function () {
+                i = $(this).attr("index");
+                updateimage(gallery.imagedata[i].url, gallery.imagedata[i].caption, gallery.imagedata[i].credit);
+            })
+
+        }
+
+        var loadjson = function (jsonurl) {
+            alert('calling ' + jsonurl)
+
+        }
+
+
+        var updateimage = function (src, caption, credit) {
+            $("#mainphoto").attr("src", src);
+            $("#caption").html( "<br>" + caption + "<br><br>" );
+        }
+
+        $(document).ready(function () {
+
+            loadgallery();
+
+            $("#loadjson").on("click", function () {
+                loadjson($("#jsonurl").val());
+            })
+
+            $(".jsonurl").on("click", function () {
+                loadjson(this.href);
+                return false;
+            })
+
+
+        })
+    </script>
+
+
+    <script src="http://iyawebdev.com/jquery.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $(".hiddenFirst").hide();
+
+            $("#itemParent").on("mouseover", function () {
+                $(".hiddenFirst").show();
+            });
+            $("#itemParent").on("mouseout", function () {
+                $(".hiddenFirst").hide();
+            });
+
+            function toggleSidebar() {
+                $(".button").toggleClass("active");
+                $(".sidebar").toggleClass("move-to-left");
+                $(".sidebar-item").toggleClass("active");
+            }
+
+            $(".button").on("click tap", function () {
+                toggleSidebar();
+            });
+
+        });
+    </script>
+
+
+</head>
+
+<body>
+
+    <img src="behindthescenesimage.jpg"; style="width: 100%; float: left;">
+
+    <div id="sitecontainer">
+
+        <div id="logo">
+            <a href="skateprojecthomepage.html">
+                <img src="logo.png">
+            </a>
+        </div>
+
+        <nav>
+            <div class="button" id="btn">
+                <div style="visibility: visible" class="bar top"></div>
+                <div class="bar middle"></div>
+                <div class="bar bottom"></div>
+            </div>
+        </nav>
+
+        <div id="textboxM">
+            <h1>BEHIND THE <span id="orange">SCENES</span></h1>
+        </div>
+    </div>
+
+    <!--Outside sitecontainer i.e invisible until called-->
+
+    <div class="button" id="btn">
+        <div class="bar top"></div>
+        <div class="bar middle"></div>
+        <div class="bar bottom"></div>
+    </div>
+
+    <!-- nav-right -->
+    <div class="sidebar">
+        <ul class="sidebar-list">
+            <li class="sidebar-item"><a href="problempage.html" class="sidebar-anchor">The Problem</a></li>
+            <li class="sidebar-item"><a href="productpage.html" class="sidebar-anchor">Product</a></li>
+            <li class="sidebar-item"><a href="marketpage.html" class="sidebar-anchor">Market</a></li>
+            <li class="sidebar-item"><a href="businesspilotpage.html" class="sidebar-anchor">Business Pilot</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-anchor">Next Steps</a></li>
+            <li class="sidebar-item"><a href="askpage.html" class="sidebar-anchor">Our Ask</a></li>
+            <div id="itemParent">
+                <li class="sidebar-item" style="margin-bottom: 15px"><a href="#" class="sidebar-anchor"> About Us </a>
+                </li>
+                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="skateteam.html" class="sidebar-mini">
+                        Skate Team </a>
+                </div>
+                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="webteam.html" class="sidebar-mini"> Web
+                        Team </a></div>
+                <div class="hiddenFirst"> <a href="#" class="sidebar-mini"> Behind the Scenes </a></div>
+            </div>
+        </ul>
+    </div>
+
+</body>
+
+
+<div id="container">
+
+    
+    <h1 id="title" class="imagebox bigbox">Image gallery</h1>
+
+    <div id="thumbs">
+        <!-- should be able to hold five imagebox divs (with images) per row -->
+
+    </div>
+
+    <div id="topbox" class="imagebox bigbox">
+        <!-- Top / large photo -->
+        <img src="" id="mainphoto">
+        <br>
+        <div id="caption">Ph caption</div>
+    </div>
+
+
+    <br style="clear:both">
+
+
+</div><!-- close container -->
+
+
+</html>
