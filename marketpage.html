@@ -11,12 +11,13 @@
 
     <style>
         #title {
-            width: 600px;
+            width: 40%;
             height: 500px;
             margin-left: 100px;
-            margin-top: 250px;
+            margin-top: 12%;
             font-size: 26pt;
             color: rgb(61, 61, 61);
+            /* border: 2px solid black; */
         }
 
         #smallfont {
@@ -26,23 +27,43 @@
         }
 
         #rightimage {
-            width: 800px;
-            height: 1200px;
+            width: 50%;
+            height: 140%;
             margin-top: -50px;
-            float: right;
+            margin-left: 53%;
             background-size: 100%;
             background-image: url(market\ skater.jpg);
+            background-repeat: no-repeat;
+            position: absolute;
         }
 
         .tab {
             margin-left: 10px;
+            font-size: 18pt;
+            margin-bottom: 10%;
         }
 
         .longtab {
             margin-left: 40px;
         }
 
+        @media screen and (max-width: 1240px) {
+            #location {
+                left: 58%;
+                top: 98%;
+            }
 
+            #title{
+                margin-top: 20%;
+                font-size: 30pt;
+            }
+
+            #rightimage {
+                
+            }
+
+
+        }
     </style>
 </head>
 
@@ -63,19 +84,13 @@
             </div>
         </nav>
 
-        <div class="button" id="btn">
-            <div class="bar top"></div>
-            <div class="bar middle"></div>
-            <div class="bar bottom"></div>
-        </div>
+        <!-- start -->
 
-        <div id="rightimage">
-            hello
-        </div>
+        <div id="rightimage"></div>
 
         <div id="title">
             <h1>INDUSTRY</h1>
-            <div id="smallfont"> 2022 Skateboarding market size: <strong>$2.19 billion</strong></div>
+            <div class="tab"> 2022 Skateboarding market size: <strong>$2.19 billion</strong></div>
             <h4 class="tab">Competitors</h4>
             <div id="smallfont">
                 <ul>
@@ -87,30 +102,47 @@
                     <li>Street Skaters</li>
                 </ul>
             </div>
-            <br>
-            <h1>TARGET MARKET</h1>
-            <div class="tab">Skaters in urban areas that struggle finding skate spots</div>
-        </div>
 
-        <!-- nav-right -->
-        <div class="sidebar">
-            <ul class="sidebar-list">
-                <li class="sidebar-item"><a href="problempage.html" class="sidebar-anchor">The Problem</a></li>
-                <li class="sidebar-item"><a href="productpage.html" class="sidebar-anchor">Product</a></li>
-                <li class="sidebar-item"><a href="marketpage.html" class="sidebar-anchor">Market</a></li>
-                <li class="sidebar-item"><a href="businesspilotpage.html" class="sidebar-anchor">Business Pilot</a></li>
-                <li class="sidebar-item"><a href="#" class="sidebar-anchor">Next Steps</a></li>
-                <li class="sidebar-item"><a href="askpage.html" class="sidebar-anchor">Our Ask</a></li>
-                <div id="itemParent">
-                    <li class="sidebar-item" style="margin-bottom: 15px"><a href="#" class="sidebar-anchor"> About Us </a>
-                    </li>
-                    <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="skateteam.html" class="sidebar-mini"> Skate Team </a>
-                    </div>
-                    <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="webteam.html" class="sidebar-mini"> Web Team </a></div>
-                    <div class="hiddenFirst" > <a href="#" class="sidebar-mini"> Behind the Scenes </a></div>
-                </div>
-            </ul>
+            <h1>TARGET MARKET</h1>
+            <div class="tab">Skaters, new and skilled, in urban areas that struggle finding skate spots
+
+                <p>This group will first consist of skaters in Los Angeles, then as the app grows, expand across the
+                    nation.</p>
+            </div>
         </div>
+    </div>
+
+    <!--Outside sitecontainer i.e invisible until called-->
+
+    <div class="button" id="btn">
+        <div class="bar top"></div>
+        <div class="bar middle"></div>
+        <div class="bar bottom"></div>
+    </div>
+
+    <!-- nav-right -->
+    <div class="sidebar">
+        <ul class="sidebar-list">
+            <li class="sidebar-item"><a href="problempage.html" class="sidebar-anchor">The Problem</a></li>
+            <li class="sidebar-item"><a href="productpage.html" class="sidebar-anchor">Product</a></li>
+            <li class="sidebar-item"><a href="marketpage.html" class="sidebar-anchor">Market</a></li>
+            <li class="sidebar-item"><a href="businesspilotpage.html" class="sidebar-anchor">Business Pilot</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-anchor">Next Steps</a></li>
+            <li class="sidebar-item"><a href="askpage.html" class="sidebar-anchor">Our Ask</a></li>
+            <div id="itemParent">
+                <li class="sidebar-item" style="margin-bottom: 15px"><a href="#" class="sidebar-anchor"> About Us
+                    </a>
+                </li>
+                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="skateteam.html" class="sidebar-mini">
+                        Skate Team </a>
+                </div>
+                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="webteam.html" class="sidebar-mini">
+                        Web
+                        Team </a></div>
+                <div class="hiddenFirst"> <a href="#" class="sidebar-mini"> Behind the Scenes </a></div>
+            </div>
+        </ul>
+    </div>
 
 </body>
 

@@ -44,7 +44,7 @@
             /* border: blue solid 2px; */
             width: 100%;
             position: relative;
-            margin-top: 32%;
+            margin-top: 35%;
             height: 100%;
         }
 
@@ -209,6 +209,12 @@
             padding-bottom: 2%;
         }
 
+        #animationvid {
+            width: 50%;
+            margin-left: 25%;
+            margin-top: 10%;
+        }
+
         @media screen and (max-width: 1240px) {
             #title {
                 font-size: 45pt;
@@ -228,7 +234,7 @@
             }
 
             #parentDemo {
-                margin-top: 58%;
+                margin-top: 61%;
                 height: 50%;
             }
 
@@ -243,22 +249,22 @@
             #title {
                 font-size: 42pt;
                 width: 62%;
-                margin-top: 24%;
+                margin-top: 26%;
             }
 
             #bio {
                 font-size: 18pt;
                 width: 60%;
-                margin-top: 40%;
+                margin-top: 42%;
             }
 
             #location {
-                left: 58%;
+                left: 56%;
                 top: 98%;
             }
 
             #parentDemo {
-                margin-top: 80%;
+                margin-top: 83%;
                 height: 50%;
             }
 
@@ -290,11 +296,15 @@
         </div>
 
         <div id="bio">
-            Obviously, our website won't get you to skate like Tyshawn, but the important thing here is to focus on
+            Obviously, our app won't get you to skate like Tyshawn, but the important thing here is to focus on
             building that skater community! Our application makes it easier for all skaters, from pros to beginners, to
-            connect to each other all across California. Click 'Start Demo' below to explore the user interface of our
+            connect to each other all across California. 
+
+            As one of, if not the first app to help skaters find spots in their area, we believe this gives us a unique competitive advantage. 
+            
+            <p>Click 'Start Demo' below to explore the user interface of our
             application and learn more
-            about its features.
+            about its features.</p>
         </div>
 
         <div id="parentDemo">
@@ -341,7 +351,7 @@
                 <p class="bigFeature">Chat</p>
                 <p class="smallFeature">The chat feature of the app will allow users to talk to each other through
                     private or group chats. This will help skaters meet at spots, get to know each other, and organize
-                    group skating events wherever they please.</p>
+                    group skating events whenever they please.</p>
             </div>
 
             <div id="skatergraphic">
@@ -361,14 +371,17 @@
                 <img class="graphic" src="click.png">
             </div>
 
-        </div>
+            <video id="animationvid">
+                <source src="logoanimation.mp4" type="video/mp4">
+            </video>
 
-        <div id="location">
-            Mount McCarthy skate park, Los Angeles, CA
+            <div id="location">
+                Mount McCarthy skate park, Los Angeles, CA
+            </div>
+
         </div>
 
         <!--Audio-->
-
         <audio id="mapaudio">
             <source type="audio/mp3" src="mapfeature.mp3">
         </audio>
@@ -450,6 +463,7 @@
         $("#demobox3").hide();
         $("#findFeature").hide();
         $(".engFeature").hide();
+        $("#animationvid").hide();
 
         $("#demoButton").on("click", function () {
             $("#demobox1").fadeIn();
@@ -642,11 +656,18 @@
             $("#demobox3").delay(16000).fadeOut();
             $("#demobox1").delay(31000).fadeOut();
 
+            setTimeout(function () {
+                $("#animationvid").fadeIn(1000),
+                    $("#animationvid").trigger("play")
+            }, 50000);
+
         }); // end of demo animation 
 
     });
 
-    $(document).delay(51000).queue(function () {
+    $(document).delay(55000).queue(function () {
+        $("#animationvid").fadeOut(1000);
+
         $("#demoButton").animate({
             backgroundColor: "#EC6439",
             color: "white",
