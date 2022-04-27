@@ -1,0 +1,497 @@
+<html>
+
+<head>
+    <title>Skate Game</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&display=swap" rel="stylesheet">
+
+    <link href="skateprojectshared.css" rel="stylesheet" type="text/css" />
+
+
+    <style>
+        body {
+            background-color: whitesmoke;
+        }
+
+        #title {
+            font-size: 40pt;
+            text-align: center;
+            margin-bottom: 1%;
+            margin-top: 2%;
+            color: black;
+            font-family: Druk Wide;
+        }
+
+        #instructions {
+            font-size: 20pt;
+            text-align: center;
+            margin-bottom: 2%;
+            color: black;
+        }
+
+        #gameDiv {
+            /* border: 1px solid red; */
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        #map {
+            /* border: 1px solid blue; */
+            position: absolute;
+            width: 68%;
+        }
+
+        .image {
+            width: 100%;
+        }
+
+        .draggable {
+            width: 3.5%;
+            position: absolute;
+            top: 80%;
+            left: 10%;
+            z-index: 5;
+        }
+
+        .slider {
+            /* border: 1px solid blue; */
+            position: absolute;
+            width: 100%;
+        }
+
+        .img-box img {
+            width: 100%;
+        }
+
+        .btn {
+            border: none;
+            outline: none;
+            background: #EC6439;
+            padding: 10px 30px;
+            font-size: 20px;
+            color: black;
+            cursor: pointer;
+            margin: 10px auto;
+        }
+
+        .btn:hover {
+            background: lightgrey;
+        }
+
+        #locations {
+            /* border: 1px solid green; */
+            position: absolute;
+            width: 30%;
+            height: 100%;
+            left: 70%;
+        }
+
+        #venicebeach {
+            border: 3px red dotted;
+            position: absolute;
+            width: 5%;
+            height: 7%;
+            top: 42%;
+            left: 37%;
+        }
+
+        #vanszone {
+            border: 3px green dotted;
+            position: absolute;
+            width: 7%;
+            height: 7%;
+            top: 80%;
+            left: 75%;
+        }
+
+        #moorpark {
+            border: 3px grey dotted;
+            position: absolute;
+            width: 7%;
+            height: 7%;
+            top: 0%;
+            left: 1%;
+        }
+
+        #culver {
+            border: 3px blue dotted;
+            position: absolute;
+            width: 5%;
+            height: 5%;
+            top: 43%;
+            left: 45%;
+        }
+
+        #hollywoodhigh {
+            border: 3px blue dotted;
+            position: absolute;
+            width: 7%;
+            height: 7%;
+            top: 28%;
+            left: 47%;
+        }
+
+        #stonerpark {
+            border: 3px purple dotted;
+            position: absolute;
+            width: 5%;
+            height: 7%;
+            top: 34%;
+            left: 40%;
+        }
+
+        #garvanza {
+            border: 3px red dotted;
+            position: absolute;
+            width: 4%;
+            height: 5%;
+            top: 25%;
+            left: 62%;
+        }
+
+        #elsereno {
+            border: 3px blue dotted;
+            position: absolute;
+            width: 4%;
+            height: 5%;
+            top: 33%;
+            left: 62%;
+        }
+
+        .zoneimg {
+            width: 100%;
+            height: 100%;
+        }
+
+        #checkButton {
+            border: none;
+            outline: none;
+            background: #1ba311;
+            padding: 10px 30px;
+            font-size: 20px;
+            color: black;
+            cursor: pointer;
+            margin: 10px auto;
+        }
+
+        #checkButton:hover {
+            background: lightgrey;
+        }
+
+        #score {
+            font-size: 18pt;
+            font-family: Inter;
+            color: black;
+            margin: 10px;
+        }
+
+        #scoreboard {
+            /* border: 2px solid red; */
+            width: 80%;
+            top: 110%;
+            left: 10%;
+            position: absolute;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            font-size: 18pt;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+
+        h2 {
+            text-decoration: underline;
+            font-size: 20pt;
+        }
+
+        #highScores {
+            font-size: 16pt;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="button" id="btn">
+            <div style="visibility: visible" class="bar top"></div>
+            <div class="bar middle"></div>
+            <div class="bar bottom"></div>
+        </div>
+    </nav>
+
+    <div id="title">Skate Spot Geo Game</div>
+
+    <div id="instructions">Use the orange location pin on the map and place it where you think each skate spot is!</div>
+
+    <div id="gameDiv">
+
+        <div id="map">
+            <img class="draggable" src="logo.png">
+
+            <img class="image" src="map.png">
+
+            <div id="venicebeach">
+                <img class="zoneimg" src="skatepark_images/venice.jpeg">
+            </div>
+
+            <div id="vanszone">
+                <img class="zoneimg" src="skatepark_images/vans.jpeg">
+            </div>
+
+            <div id="moorpark">
+                <img class="zoneimg" src="skatepark_images/moor.jpeg">
+            </div>
+
+            <div id="culver">
+                <img class="zoneimg" src="skatepark_images/culvercity.jpeg">
+            </div>
+
+            <div id="hollywoodhigh">
+                <img class="zoneimg" src="skatepark_images/hollywoodhigh.jpeg">
+            </div>
+
+            <div id="stonerpark">
+                <img class="zoneimg" src="skatepark_images/stoner.jpeg">
+            </div>
+
+            <div id="garvanza">
+                <img class="zoneimg" src="skatepark_images/garvanza.jpeg">
+            </div>
+
+            <div id="elsereno">
+                <img class="zoneimg" src="skatepark_images/elsereno.jpeg">
+            </div>
+
+        </div>
+
+        <div id="locations">
+            <div class="slider">
+                <div class="img-box">
+                    <img src="skatepark_images/venice.jpeg" class="slider-img">
+                </div>
+
+                <button class="btn" onclick="prev()">Prev</button>
+                <button class="btn" onclick="next()">Next</button>
+                <button id="checkButton">Check</button>
+                <div id="score">Score: 0/8 </div>
+
+                <div id="scoreboard">
+                    <h2>HIGH SCORES</h2>
+                    <div id="highScores"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--Audio-->
+
+        <audio id="correctsf">
+            <source type="audio/mp3" src="Ding Sound Effect.mp3">
+        </audio>
+
+        <audio id="incorrectsf">
+            <source type="audio/mp3" src="Buzzer Sound Effect.mp3">
+        </audio>
+
+    </div>
+
+    <!--Outside sitecontainer i.e invisible until called-->
+    <div class="button" id="btn">
+        <div class="bar top"></div>
+        <div class="bar middle"></div>
+        <div class="bar bottom"></div>
+    </div>
+
+    <!-- nav-right -->
+    <div class="sidebar">
+        <ul class="sidebar-list">
+            <li class="sidebar-item"><a href="problempage.html" class="sidebar-anchor">The Problem</a></li>
+            <li class="sidebar-item"><a href="productpage.html" class="sidebar-anchor">Product</a></li>
+            <li class="sidebar-item"><a href="marketpage.html" class="sidebar-anchor">Market</a></li>
+            <li class="sidebar-item"><a href="businesspilotpage.html" class="sidebar-anchor">Business Pilot</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-anchor">Next Steps</a></li>
+            <li class="sidebar-item"><a href="askpage.html" class="sidebar-anchor">Our Ask</a></li>
+            <div id="itemParent">
+                <li class="sidebar-item" style="margin-bottom: 15px"><a href="#" class="sidebar-anchor"> About Us
+                    </a>
+                </li>
+                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="skateteam.html" class="sidebar-mini">
+                        Skate Team </a>
+                </div>
+                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="webteam.html" class="sidebar-mini">
+                        Web Team </a></div>
+                <div class="hiddenFirst"> <a href="#" class="sidebar-mini"> Behind the Scenes </a></div>
+            </div>
+        </ul>
+    </div>
+
+
+</body>
+
+<script src="http://iyawebdev.com/jquery.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script>
+
+    $(document).ready(function () {
+
+        // start of sidebar script
+        $(".hiddenFirst").hide();
+
+        $("#itemParent").on("mouseover", function () {
+            $(".hiddenFirst").show();
+        });
+        $("#itemParent").on("mouseout", function () {
+            $(".hiddenFirst").hide();
+        });
+
+        function toggleSidebar() {
+            $(".button").toggleClass("active");
+            $(".sidebar").toggleClass("move-to-left");
+            // $(".move-to-left").css("z-index", 2);
+            // $(".button").css("z-index", 3);
+            $(".sidebar-item").toggleClass("active");
+        }
+
+        $(".button").on("click tap", function () {
+            toggleSidebar();
+        });
+        // end of sidebar script
+
+        //zone images
+        $(".zoneimg").hide();
+
+        $(function () {
+            $(".draggable").draggable({
+                containment: "#map",
+                cursor: "grabbing",
+                opacity: 0.8,
+            });
+        });
+    });
+
+</script>
+
+<script>
+    var slider_img = document.querySelector('.slider-img');
+    var images = ['venice.jpeg', 'vans.jpeg', 'moor.jpeg', 'culvercity.jpeg', 'hollywoodhigh.jpeg', 'stoner.jpeg', 'garvanza.jpeg', 'elsereno.jpeg'];
+    var i = 0;
+
+    function prev() {
+        if (i <= 0) i = images.length;
+        i--;
+        return setImg();
+    }
+
+    function next() {
+        if (i >= images.length - 1) i = -1;
+        i++;
+        return setImg();
+    }
+
+    function setImg() {
+        return slider_img.setAttribute('src', "skatepark_images/" + images[i]);
+    }
+
+    var x = 0;
+
+    function check() {
+
+        if ($(".slider-img").attr("src") == "skatepark_images/venice.jpeg") {
+            var imageChosen = "#venicebeach";
+        } else if ($(".slider-img").attr("src") == "skatepark_images/vans.jpeg") {
+            var imageChosen = "#vanszone";
+        } else if ($(".slider-img").attr("src") == "skatepark_images/moor.jpeg") {
+            var imageChosen = "#moorpark";
+        } else if ($(".slider-img").attr("src") == "skatepark_images/culvercity.jpeg") {
+            var imageChosen = "#culver";
+        } else if ($(".slider-img").attr("src") == "skatepark_images/hollywoodhigh.jpeg") {
+            var imageChosen = "#hollywoodhigh";
+        } else if ($(".slider-img").attr("src") == "skatepark_images/stoner.jpeg") {
+            var imageChosen = "#stonerpark";
+        } else if ($(".slider-img").attr("src") == "skatepark_images/garvanza.jpeg") {
+            var imageChosen = "#garvanza";
+        } else if ($(".slider-img").attr("src") == "skatepark_images/elsereno.jpeg") {
+            var imageChosen = "#elsereno";
+        }
+
+        if (i == 7) {
+            // alert("last image")
+            game0ver();
+        }
+
+        var pinleft = document.querySelector(".draggable").style.left;
+
+        var pintop = document.querySelector(".draggable").style.top;
+        console.log("image chose ID: " + imageChosen);
+
+        // console.log(document.querySelector("#venicebeach").style.left);
+
+        var field = $(imageChosen).position()
+        var pin = $(".draggable").position()
+
+        console.log(pin)
+
+        // console.log("Pin: " + pin.left + ", " + pin.top + ", Section: " + field.left + ", " + field.top);
+
+        if (pin.left > (field.left - 20) && pin.left < (field.left + 20) && pin.top + 10 > (field.top - 20) && pin.top < (field.top + 20)) {
+            $(".draggable").attr('src', 'correct.png');
+
+            $(".zoneimg").show();
+
+            $("#correctsf").trigger("play");
+            x++
+            $("#score").html("Score: " + x + "/8");
+            next();
+            console.log("WORKED");
+        } else {
+            $(".draggable").attr('src', 'incorrect.png');
+            $("#incorrectsf").trigger("play");
+            $("#incorrectsf").prop("volume", 0.5)
+            console.log("NOT WORKING");
+        }
+    };
+
+    var score = 0
+
+    function checkHighScore(x) {
+
+        if (localStorage.getItem("score")) {
+            score = localStorage.getItem("score", parseInt(localStorage.getItem("score")));
+        } else {
+            localStorage.setItem("score", "0");
+        }
+
+        if (x > score) {
+            const name = prompt('You got a highscore! Enter name:');
+            localStorage.setItem("score", x.toString())
+            document.querySelector("#highScores").innerHTML = name + ': ' + x + '/8';
+        } else {
+            alert("Try again to beat your last score!")
+        }
+
+    }
+
+    function game0ver() {
+        checkHighScore(x);
+    }
+
+    $("#checkButton").on("click", function () {
+        check();
+    });
+
+
+
+
+
+</script>
+
+
+</html>
