@@ -1,0 +1,216 @@
+<html>
+
+<head>
+    <title>Explore Games</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&display=swap" rel="stylesheet">
+
+    <link href="skateprojectshared.css" rel="stylesheet" type="text/css" />
+    <style>
+        html {
+            background-image: url(explorebg.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+        }
+
+        #title {
+            /* border: red solid 1px; */
+            font-size: 55pt;
+            color: white;
+            font-weight: bold;
+            position: absolute;
+            width: 40%;
+            margin-left: 7%;
+            margin-top: 12%;
+        }
+
+        #bio {
+            /* border: red solid 1px; */
+            font-size: 20pt;
+            color: white;
+            position: absolute;
+            width: 30%;
+            margin-left: 12%;
+            margin-top: 20%;
+        }
+
+        #game1 {
+             /* border: #EC6439 solid 3px; */
+            color: white;
+            font-size: 18pt;
+            position: absolute;
+            width: 35%;
+            left: 10%;
+            top: 50%;
+            background-color: black;
+        }
+
+        #game1:hover {
+            opacity: 0.8;
+            box-shadow: 20px 20px 20px #EC6439;
+            transition: 0.5s;
+        }
+
+        #game2 {
+            color: white;
+            font-size: 18pt;
+            position: absolute;
+            width: 35%;
+            left: 55%;
+            top: 50%;
+            background-color: black;
+        }
+
+        #game2:hover {
+            opacity: 0.8;
+            box-shadow: 20px 20px 20px #EC6439;
+            transition: 0.5s;
+        }
+
+        .gameimg {
+            width: 100%;
+        }
+
+        .gametitle {
+            text-align: center;
+            font-size: 18pt;
+            padding: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        #location {
+            font-size: 14pt;
+            color: white;
+            font-weight: bold;
+            position: absolute;
+            left: 75%;
+            top: 110%;
+            padding-bottom: 2%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="sitecontainer">
+
+        <div id="logo">
+            <a href="skateprojecthomepage.html">
+                <img src="logo.png">
+            </a>
+        </div>
+
+        <nav>
+            <div class="button" id="btn">
+                <div style="visibility: visible" class="bar top"></div>
+                <div class="bar middle"></div>
+                <div class="bar bottom"></div>
+            </div>
+        </nav>
+
+        <!--start-->
+        <div id="title">
+            SKATE GAMES
+        </div>
+
+        <div id="bio">
+            Explore our fun skate games below!
+        </div>
+
+        <div id="game1">
+            <a href="geomapgame.html">
+                <img class="gameimg" src="geomap.png">
+                <div class="gametitle">
+                    Skate Spot Geo Game
+                </div>
+            </a>
+        </div>
+
+        <div id="game2">
+            <a href="">
+                <img src="">
+                <div class="gametitle">
+                    Customize your own skateboard!
+                </div>
+            </a>
+        </div>
+
+        <div id="location">
+            Mount McCarthy skate park, Los Angeles, CA
+        </div>
+    </div>
+
+    <!--Outside sitecontainer i.e invisible until called-->
+    <div class="button" id="btn">
+        <div class="bar top"></div>
+        <div class="bar middle"></div>
+        <div class="bar bottom"></div>
+    </div>
+
+    <!-- nav-right -->
+    <div class="sidebar">
+        <ul class="sidebar-list">
+            <li class="sidebar-item"><a href="problempage.html" class="sidebar-anchor">The Problem</a></li>
+            <li class="sidebar-item"><a href="productpage.html" class="sidebar-anchor">Product</a></li>
+            <li class="sidebar-item"><a href="marketpage.html" class="sidebar-anchor">Market</a></li>
+            <li class="sidebar-item"><a href="businesspilotpage.html" class="sidebar-anchor">Business Pilot</a></li>
+            <li class="sidebar-item"><a href="nextsteps.html" class="sidebar-anchor">Next Steps</a></li>
+            <li class="sidebar-item"><a href="askpage.html" class="sidebar-anchor">Our Ask</a></li>
+            <div id="itemParent">
+                <li class="sidebar-item" style="margin-bottom: 15px"><a class="sidebar-anchor"> About Us </a>
+                </li>
+                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="skateteam.html" class="sidebar-mini">
+                        Skate Team </a>
+                </div>
+                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="webteam.html" class="sidebar-mini"> Web
+                        Team </a></div>
+                <div class="hiddenFirst"> <a href="behindthescenes.html" class="sidebar-mini"> Behind the Scenes </a>
+                </div>
+            </div>
+            <li class="sidebar-item"><a href="gamepage.html" class="sidebar-anchor">Explore Games</a></li>
+        </ul>
+    </div>
+
+</body>
+
+<script src="http://iyawebdev.com/jquery.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        // start of sidebar script
+        $(".hiddenFirst").hide();
+
+        $("#itemParent").on("mouseover", function () {
+            $(".hiddenFirst").show();
+        });
+        $("#itemParent").on("mouseout", function () {
+            $(".hiddenFirst").hide();
+        });
+
+        function toggleSidebar() {
+            $(".button").toggleClass("active");
+            $(".sidebar").toggleClass("move-to-left");
+            // $(".move-to-left").css("z-index", 2);
+            // $(".button").css("z-index", 3);
+            $(".sidebar-item").toggleClass("active");
+        }
+
+        $(".button").on("click tap", function () {
+            toggleSidebar();
+        });
+        // end of sidebar script
+
+    });
+</script>
+
+</html>
