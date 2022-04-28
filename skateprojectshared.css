@@ -158,11 +158,33 @@ nav {
 @media screen and (max-width: 1240px) {
     
     .button {
-        right: 7%;
-        top: 5%;
+        right: 5%;
+        top: 7%;
+    }
+
+    #logo {
+        top: 7%;
+        left: 5%;
     }
     
     .move-to-left {
         width: 32%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    
+    .button {
+        right: 4%;
+        top: 7%;
+    }
+
+    #logo {
+        top: 7%;
+        left: 4%;
+    }
+    
+    .move-to-left {
+        width: 30%;
     }
 }
