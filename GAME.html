@@ -66,21 +66,6 @@
             width: 100%;
         }
 
-        .btn {
-            border: none;
-            outline: none;
-            background: #EC6439;
-            padding: 10px 30px;
-            font-size: 20px;
-            color: black;
-            cursor: pointer;
-            margin: 10px auto;
-        }
-
-        .btn:hover {
-            background: lightgrey;
-        }
-
         #locations {
             /* border: 1px solid green; */
             position: absolute;
@@ -90,52 +75,52 @@
         }
 
         #venicebeach {
-            border: 3px red dotted;
+            border: 3px #EC6439 dotted;
             position: absolute;
             width: 5%;
             height: 7%;
             top: 42%;
-            left: 37%;
+            left: 36%;
         }
 
         #vanszone {
-            border: 3px green dotted;
+            border: 3px #EC6439 dotted;
             position: absolute;
-            width: 7%;
+            width: 5%;
             height: 7%;
             top: 80%;
             left: 75%;
         }
 
         #moorpark {
-            border: 3px grey dotted;
+            border: 3px #EC6439 dotted;
             position: absolute;
-            width: 7%;
+            width: 5%;
             height: 7%;
             top: 0%;
-            left: 1%;
+            left: 2%;
         }
 
         #culver {
-            border: 3px blue dotted;
+            border: 3px #EC6439 dotted;
             position: absolute;
             width: 5%;
-            height: 5%;
+            height: 7%;
             top: 43%;
-            left: 45%;
+            left: 46%;
         }
 
         #hollywoodhigh {
-            border: 3px blue dotted;
+            border: 3px #EC6439 dotted;
             position: absolute;
-            width: 7%;
+            width: 5%;
             height: 7%;
             top: 28%;
             left: 47%;
         }
 
         #stonerpark {
-            border: 3px purple dotted;
+            border: 3px #EC6439 dotted;
             position: absolute;
             width: 5%;
             height: 7%;
@@ -144,20 +129,20 @@
         }
 
         #garvanza {
-            border: 3px red dotted;
+            border: 3px #EC6439 dotted;
             position: absolute;
-            width: 4%;
-            height: 5%;
+            width: 5%;
+            height: 7%;
             top: 25%;
             left: 62%;
         }
 
         #elsereno {
-            border: 3px blue dotted;
+            border: 3px #EC6439 dotted;
             position: absolute;
-            width: 4%;
-            height: 5%;
-            top: 33%;
+            width: 5%;
+            height: 7%;
+            top: 35%;
             left: 62%;
         }
 
@@ -228,7 +213,9 @@
 
     <div id="title">Skate Spot Geo Game</div>
 
-    <div id="instructions">Use the orange location pin on the map and place it where you think each skate spot is!</div>
+    <div id="instructions">Use the orange location pin on the map and drag it where you think each skate spot is!
+        <p style="font-size: 15pt; color: rgb(61, 61, 61);"> Hint: The dotted zones may help</p>
+    </div>
 
     <div id="gameDiv">
 
@@ -238,35 +225,35 @@
             <img class="image" src="map.png">
 
             <div id="venicebeach">
-                <img class="zoneimg" src="skatepark_images/venice.jpeg">
+                <img id="venice" class="zoneimg" src="skatepark_images/venice.jpeg">
             </div>
 
             <div id="vanszone">
-                <img class="zoneimg" src="skatepark_images/vans.jpeg">
+                <img id="vans" class="zoneimg" src="skatepark_images/vans.jpeg">
             </div>
 
             <div id="moorpark">
-                <img class="zoneimg" src="skatepark_images/moor.jpeg">
+                <img id="moor" class="zoneimg" src="skatepark_images/moor.jpeg">
             </div>
 
             <div id="culver">
-                <img class="zoneimg" src="skatepark_images/culvercity.jpeg">
+                <img id="culverpark" class="zoneimg" src="skatepark_images/culvercity.jpeg">
             </div>
 
             <div id="hollywoodhigh">
-                <img class="zoneimg" src="skatepark_images/hollywoodhigh.jpeg">
+                <img id="hollywood" class="zoneimg" src="skatepark_images/hollywoodhigh.jpeg">
             </div>
 
             <div id="stonerpark">
-                <img class="zoneimg" src="skatepark_images/stoner.jpeg">
+                <img id="stoner" class="zoneimg" src="skatepark_images/stoner.jpeg">
             </div>
 
             <div id="garvanza">
-                <img class="zoneimg" src="skatepark_images/garvanza.jpeg">
+                <img id="garpark" class="zoneimg" src="skatepark_images/garvanza.jpeg">
             </div>
 
             <div id="elsereno">
-                <img class="zoneimg" src="skatepark_images/elsereno.jpeg">
+                <img id="sereno" class="zoneimg" src="skatepark_images/elsereno.jpeg">
             </div>
 
         </div>
@@ -277,13 +264,11 @@
                     <img src="skatepark_images/venice.jpeg" class="slider-img">
                 </div>
 
-                <button class="btn" onclick="prev()">Prev</button>
-                <button class="btn" onclick="next()">Next</button>
                 <button id="checkButton">Check</button>
                 <div id="score">Score: 0/8 </div>
 
                 <div id="scoreboard">
-                    <h2>HIGH SCORES</h2>
+                    <h2>HIGH SCORE</h2>
                     <div id="highScores"></div>
                 </div>
 
@@ -376,22 +361,27 @@
         });
     });
 
+ 
+   
+
 </script>
 
 <script>
     var slider_img = document.querySelector('.slider-img');
     var images = ['venice.jpeg', 'vans.jpeg', 'moor.jpeg', 'culvercity.jpeg', 'hollywoodhigh.jpeg', 'stoner.jpeg', 'garvanza.jpeg', 'elsereno.jpeg'];
     var i = 0;
-
-    function prev() {
-        if (i <= 0) i = images.length;
-        i--;
-        return setImg();
-    }
+    var checktest = 0;
+    $(document).ready(function () {
+        if (localStorage.getItem("score")) {
+            score = localStorage.getItem("score", parseInt(localStorage.getItem("score")));
+            name = localStorage.getItem("nameVariable");
+            document.querySelector("#highScores").innerHTML = name + ': ' + score + '/18';
+        }
+    });
 
     function next() {
-        if (i >= images.length - 1) i = -1;
-        i++;
+        console.log("nexti: " + i);
+        i++; console.log("nexti: " + i);
         return setImg();
     }
 
@@ -405,25 +395,28 @@
 
         if ($(".slider-img").attr("src") == "skatepark_images/venice.jpeg") {
             var imageChosen = "#venicebeach";
+            var idChosen = "#venice";
         } else if ($(".slider-img").attr("src") == "skatepark_images/vans.jpeg") {
             var imageChosen = "#vanszone";
+            var idChosen = "#vans";
         } else if ($(".slider-img").attr("src") == "skatepark_images/moor.jpeg") {
             var imageChosen = "#moorpark";
+            var idChosen = "#moor";
         } else if ($(".slider-img").attr("src") == "skatepark_images/culvercity.jpeg") {
             var imageChosen = "#culver";
+            var idChosen = "#culverpark";
         } else if ($(".slider-img").attr("src") == "skatepark_images/hollywoodhigh.jpeg") {
             var imageChosen = "#hollywoodhigh";
+            var idChosen = "#hollywood";
         } else if ($(".slider-img").attr("src") == "skatepark_images/stoner.jpeg") {
             var imageChosen = "#stonerpark";
+            var idChosen = "#stoner";
         } else if ($(".slider-img").attr("src") == "skatepark_images/garvanza.jpeg") {
             var imageChosen = "#garvanza";
+            var idChosen = "#garpark";
         } else if ($(".slider-img").attr("src") == "skatepark_images/elsereno.jpeg") {
             var imageChosen = "#elsereno";
-        }
-
-        if (i == 7) {
-            // alert("last image")
-            game0ver();
+            var idChosen = "#sereno";
         }
 
         var pinleft = document.querySelector(".draggable").style.left;
@@ -431,29 +424,43 @@
         var pintop = document.querySelector(".draggable").style.top;
         console.log("image chose ID: " + imageChosen);
 
-        // console.log(document.querySelector("#venicebeach").style.left);
-
         var field = $(imageChosen).position()
         var pin = $(".draggable").position()
-
-        console.log(pin)
 
         // console.log("Pin: " + pin.left + ", " + pin.top + ", Section: " + field.left + ", " + field.top);
 
         if (pin.left > (field.left - 20) && pin.left < (field.left + 20) && pin.top + 10 > (field.top - 20) && pin.top < (field.top + 20)) {
             $(".draggable").attr('src', 'correct.png');
-            $(".zoneimg").show();
+            $(idChosen).show();
             $("#correctsf").trigger("play");
             x++
             $("#score").html("Score: " + x + "/8");
-            next();
+            if (i == "7") {
+                // alert("last image")
+                game0ver();
+
+            } else {
+                next();
+            }
+           
             console.log("WORKED");
+
         } else {
             $(".draggable").attr('src', 'incorrect.png');
+            console.log( $(".draggable").position(field.top + field.left));
+            $(idChosen).show();
             $("#incorrectsf").trigger("play");
             $("#incorrectsf").prop("volume", 0.5)
             console.log("NOT WORKING");
+            if (i == "7") {
+                // alert("last image")
+                game0ver();
+
+            } else {
+                next();
+            }
         }
+
     };
 
     var score = 0
@@ -464,18 +471,28 @@
             score = localStorage.getItem("score", parseInt(localStorage.getItem("score")));
         } else {
             localStorage.setItem("score", "0");
+            score = "0";
         }
+        score = parseInt(score);
+        console.log("In function score: " + score);
+        console.log(x + " >= " + score + " <- is this right?");
+        if (x >= score) {
 
-        if (x > score) {
-            const name = prompt('You got a highscore! Enter name:');
+            var name = prompt('You got a highscore! Enter name:');
             localStorage.setItem("score", x.toString())
-            document.querySelector("#highScores").innerHTML = x;
+            localStorage.setItem("nameVariable", name.toString());
+            document.querySelector("#highScores").innerHTML = name + ': ' + x + '/18';
+        } else {
+            alert("Sorry, you didn't beat the highscore. Try again!")
+            document.location.reload()
         }
 
     }
 
     function game0ver() {
+        // console.log("gameoverworking " + x + i)
         checkHighScore(x);
+        console.log("Pre function: " + localStorage.getItem("score"));
     }
 
     $("#checkButton").on("click", function () {
