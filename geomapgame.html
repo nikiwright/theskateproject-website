@@ -23,6 +23,14 @@
             left: 4%;
         }
 
+        #arrowhover{
+            position: absolute;
+            width: 6%;
+            height: auto;
+            top: 9%;
+            left: 4%;
+        }
+
         #title {
             font-size: 40pt;
             text-align: center;
@@ -283,7 +291,13 @@
 
     <div id="backarrow">
         <a href="gamepage.html">
-            <img class="image" src="backarrow.png">
+          <img class='image' src="backarrow.png">
+        </a>
+    </div>
+
+    <div id="arrowhover">
+        <a href="gamepage.html">
+          <img class='image' src="backarrowhover.png">
         </a>
     </div>
 
@@ -404,6 +418,17 @@
 
     $(document).ready(function () {
 
+        $("#arrowhover").hide();
+        $("#backarrow").on('mouseover', function(){
+            $(this).hide();
+            $("#arrowhover").show();
+        });
+
+        $("#backarrow").on('mouseout', function(){
+            $(this).show();
+            $("#arrowhover").hide();
+        });
+
         // start of sidebar script
         $(".hiddenFirst").hide();
 
@@ -438,8 +463,6 @@
             });
         });
     });
-
-
 
 
 </script>
