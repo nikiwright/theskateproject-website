@@ -14,7 +14,7 @@
 
     <style>
         body {
-            background-color: black;
+            background-color: white;
         }
 
         #orange {
@@ -28,8 +28,8 @@
             color: white;
             font-weight: bold;
             left: 7%;
-            top: 10%;
-            opacity: 0.85;
+            top: 28%;
+            opacity: 0.9;
         }
 
         .name {
@@ -65,10 +65,26 @@
             background-color: rgb(204, 135, 78);
             text-align: center;
             margin: auto;
+            position: absolute;
+            margin-top: 5%;
+            margin-left: 16%;
+        }
+
+        #caption {
+            font-size: 18pt;
+            font-weight: bold;
+        }
+
+        #backgroundimg {
+            /* border: 2px solid red; */
+            width: 100%;
+            height: 62%;
+            margin-top: -5%;
+            background-image: url("Behindthescenesimage.jpg");
+            background-position: 62% 45%;
         }
 
         @media screen and (max-width: 1240px) {
-
 
             #logo {
                 width: 6%;
@@ -80,6 +96,8 @@
                 top: 95%;
             }
 
+
+
         }
     </style>
 
@@ -87,11 +105,10 @@
 
     <script>
 
-
         var gallerytitle = "Skate Project Behind the Scenes Gallery";
 
         var gallery = {
-            "title": "Behind the Scenes",
+            "title": "Skate Team Photo Gallery",
             "imagedata": [
                 {
                     "url": "SkateTeam.png",
@@ -115,8 +132,8 @@
                     "caption": "The Skate Project Consumer Website P3",
                 },
 
-            ] 
-        } 
+            ]
+        }
 
         var loadgallery = function () {
 
@@ -151,7 +168,7 @@
 
         var updateimage = function (src, caption, credit) {
             $("#mainphoto").attr("src", src);
-            $("#caption").html( "<br>" + caption + "<br><br>" );
+            $("#caption").html("<br>" + caption + "<br><br>");
         }
 
         $(document).ready(function () {
@@ -204,8 +221,6 @@
 
 <body>
 
-    <img src="behindthescenesimage.jpg"; style="width: 100%; float: left;">
-
     <div id="sitecontainer">
 
         <div id="logo">
@@ -222,9 +237,38 @@
             </div>
         </nav>
 
+        <!-- start -->
+
+        <div id="backgroundimg"></div>
+
         <div id="textboxM">
             <h1>BEHIND THE <span id="orange">SCENES</span></h1>
         </div>
+
+
+        <div id="container">
+
+            <h1 id="title" class="imagebox bigbox">Image gallery</h1>
+
+            <div id="thumbs">
+                <!-- should be able to hold five imagebox divs (with images) per row -->
+
+            </div>
+
+            <div id="topbox" class="imagebox bigbox">
+                <!-- Top / large photo -->
+                <img src="" id="mainphoto">
+                <br>
+                <div id="caption">Caption</div>
+            </div>
+
+
+            <br style="clear:both">
+
+
+        </div><!-- close container -->
+
+
     </div>
 
     <!--Outside sitecontainer i.e invisible until called-->
@@ -260,28 +304,6 @@
 </body>
 
 
-<div id="container">
-
-    
-    <h1 id="title" class="imagebox bigbox">Image gallery</h1>
-
-    <div id="thumbs">
-        <!-- should be able to hold five imagebox divs (with images) per row -->
-
-    </div>
-
-    <div id="topbox" class="imagebox bigbox">
-        <!-- Top / large photo -->
-        <img src="" id="mainphoto">
-        <br>
-        <div id="caption">Ph caption</div>
-    </div>
-
-
-    <br style="clear:both">
-
-
-</div><!-- close container -->
 
 
 </html>
