@@ -37,6 +37,7 @@
             float: left;
             background-size: 100%;
             background-image: url(business\ pilot\ skater.jpg);
+            background-repeat: no-repeat;
         }
 
         .tab {
@@ -62,10 +63,99 @@
         }
         .selectionbutton{
             margin:20px;
+            font-size: 50pt;
         }
         .centre{
             text-align: center;
+            margin:auto;
+            width:100%;
         }
+        canvas{
+            margin:auto;
+            width:90%
+        }
+    @media screen and (max-width: 1240px) {
+        html {
+            background-position-x: center;
+        }
+        #rightimage {
+            margin-top: -50px;
+            width:100%;
+            float: left;
+            background-size: 100%;
+            background-image: url(business\ pilot\ skater.jpg);
+        }
+        #title {
+            width: 100%;
+            margin-right: 200px;
+            margin-top: 100px;
+            font-size: 20pt;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            float: right;
+            position:absolute;
+        }
+        img{
+            border-radius: 20px;
+        }
+        #smallfont {
+            font-size: 16pt;
+            margin: 50px;
+            margin-top: -40px;
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+        }
+        .selectionbutton{
+            margin:20px;
+            font-size: 30pt;
+        }
+
+        }
+        @media screen and (max-width: 600px) {
+        html {
+            background-position-x: center;
+        }
+        #rightimage {
+            margin-top: -50px;
+            height:100%;
+            width:100%;
+            background-image: url(business\ pilot\ skater.jpg);
+        }
+        #title {
+            width: 100%;
+            height:400px;
+            font-size: 12pt;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            float: right;
+            position:absolute;
+        }
+        img{
+            border-radius: 10px;
+        }
+        #smallfont {
+            font-size: 12pt;
+            margin: 50px;
+            margin-top: 5px;
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+        }
+        .selectionbutton{
+            margin:20px;
+            font-size: 30pt;
+        }
+        #skateimage{
+            width:80%;
+        }
+        br{
+        height:10%;
+        }
+        }
+
     </style>
 </head>
 
@@ -92,7 +182,7 @@
 
         <div id="title">
             <h1>MVP Mockup</h1>
-            <img src="skateappUI.jpg" alt="skate app ui" style="width: 500px;"> <br><br><br>
+            <img src="skateappUI.jpg" alt="skate app ui" style="width: 500px;" id="skateimage"> <br><br><br>
             <div id="smallfont">The app will have a map interface that allows users to search for their city or
                 hometown, and all of the street spots in that area would be displayed. Other than directions to those
                 spots, users will be able to see photos, videos, and reviews by other skaters on each skate spot, to
@@ -141,8 +231,12 @@
             <h1 id="bt1" class="selectionbutton">Financial Projections for The Skate Project</h1>
         </div>
         </div>
-    <h3 class="centre">Select Use slider to see expanded timeline</h3>
-    <canvas id="c1" style="width: 90%; height: 500px; margin: auto;"></canvas>
+    <h3 class="centre">Select Data and Use Slider to See Expanded Timeline</h3>
+    <canvas id="myChart" style="width: 90%; height: 500px; margin: auto;"></canvas>
+    <div class="centre">
+        <input oninput="updateMin(this)" type="range" id="start" min="0" max="6" value="0">
+        <input oninput="updateMax(this)" type="range" id="end" min="" max="6" value="6"> 
+    </div>  
     <br><br><br>
     <!-- <canvas id="c2" width="auto" height="100%"></canvas>
     <canvas id="c3" width="auto" height="100%"></canvas> -->
@@ -166,14 +260,17 @@
     //     document.querySelector("#3").show()
     // })
 
-    const ctx = document.getElementById('c1').getContext('2d');
-    new Chart("c1", {
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const labels = ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5', 'Year 6'];
+    const datapoints = [0, 50, 3325, 104445.60, 302467.60, 513707.60];
+
+    const myChart = new Chart(ctx, {
         type: 'line',
         data: {
             labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5', 'Year 6'], 
             datasets: [{
-                label: '# of Votes',
-                data: [6, 4, 3, 5, 2, 3],
+                label: 'Revenue',
+                data: [0, 50, 3325, 104445.60, 302467.60, 513707.60],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)'
                     // 'rgba(54, 162, 235, 0.2)',
@@ -193,7 +290,7 @@
                 borderWidth: 1
             }, {
                 label: 'Gross Profits',
-                data: [1, 2, 5, 6, 4, 7],
+                data: [0, 250, 350, 2000, 5000, 10000],
                 backgroundColor: [
                     // 'rgba(255, 99, 132, 0.2)'
                     'rgba(54, 162, 235, 0.2)'
@@ -212,8 +309,8 @@
                 ],
                 borderWidth: 2
             }, {
-                label: 'Operating Profits',
-                data: [8, 2, 1, 3, 4, 2],
+                label: 'Total Expenses',
+                data: [0, 50, 3675, 106455.60, 307467.60, 523707.60],
                 backgroundColor: [
                     //'rgba(255, 99, 132, 0.2)'
                     // 'rgba(54, 162, 235, 0.2)',
@@ -236,6 +333,28 @@
         },
         options: {}
     });
+
+    const start = document.getElementById('start');
+    const end = document.getElementById('end');
+
+    function updateMin(range){
+        console.log(range.value);
+        const minValue = labels.slice(range.value - end.value, 6);
+        const dbMinValue = datapoints.slice(range.value - end.value, 6);
+        myChart.config.data.labels = minValue;
+        myChart.config.data.datasets[0].data = dbMinValue;
+        myChart.update();
+    }
+    function updateMax(range){
+        console.log(range.value);
+        const maxValue = labels.slice(0, range.value);
+        const dbMaxValue = datapoints.slice(0, range.value);
+        myChart.config.data.labels = maxValue;
+        myChart.config.data.datasets[0].data = dbMaxValue;
+        start.max = range.value;
+        
+        myChart.update();
+    }
     </script>
 
 
