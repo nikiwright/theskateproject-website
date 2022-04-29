@@ -612,7 +612,7 @@
             }, 1500);
             $(idChosen).show();
             $(capChosen).show();
-            // $("#correctsf").trigger("play");
+            $("#correctsf").trigger("play");
             x++
             $("#score").html("Score: " + x + "/8");
             if (i == "7") {
@@ -635,7 +635,7 @@
             console.log($(".draggable").position(field.top + field.left));
             $(idChosen).show();
             $(capChosen).show();
-            // $("#incorrectsf").trigger("play");
+            $("#incorrectsf").trigger("play");
             $("#incorrectsf").prop("volume", 0.5)
             console.log("NOT WORKING");
             if (i == "7") {
