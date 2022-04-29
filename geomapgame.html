@@ -344,6 +344,7 @@
         </div>
     </nav>
 
+    <!-- back button html start-->
     <div id="backarrow">
         <a href="gamepage.html">
             <img class='image' src="backarrow.png">
@@ -355,6 +356,7 @@
             <img class='image' src="backarrowhover.png">
         </a>
     </div>
+     <!-- back button html end-->
 
     <div id="title">Skate Spot Geo Game</div>
 
@@ -487,6 +489,7 @@
 
     $(document).ready(function () {
 
+        // start back button
         $("#arrowhover").hide();
 
         $("#backarrow").on('mouseover', function () {
@@ -498,6 +501,7 @@
             $(this).hide();
             $("#backarrow").show();
         });
+        // end back button
 
         // start of sidebar script
         $(".hiddenFirst").hide();
