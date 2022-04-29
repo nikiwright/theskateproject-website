@@ -176,15 +176,15 @@ nav {
     
     .button {
         right: 4%;
-        top: 6%;
+        top: 5%;
     }
 
     #logo {
-        top: 6%;
+        top: 5%;
         left: 4%;
     }
     
     .move-to-left {
-        width: 30%;
+        width: 50%;
     }
 }

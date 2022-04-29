@@ -229,8 +229,8 @@
             }
 
             #location {
-                left: 58%;
-                top: 98%;
+                left: 54%;
+                top: 115%;
             }
 
             #parentDemo {
@@ -240,6 +240,7 @@
 
             #demoButton {
                 margin-left: 40%;
+                margin-top: 15%;
                 width: 18%;
             }
 
@@ -266,6 +267,12 @@
             #parentDemo {
                 margin-top: 83%;
                 height: 50%;
+            }
+
+            #demoButton {
+                margin-left: 40%;
+                margin-top: 15%;
+                width: 18%;
             }
 
         }
@@ -298,13 +305,14 @@
         <div id="bio">
             Obviously, our app won't get you to skate like Tyshawn, but the important thing here is to focus on
             building that skater community! Our application makes it easier for all skaters, from pros to beginners, to
-            connect to each other all across California. 
+            connect to each other all across California.
 
-            As one of, if not the first app to help skaters find spots in their area, we believe this gives us a unique competitive advantage. 
-            
+            As one of, if not the first app to help skaters find spots in their area, we believe this gives us a unique
+            competitive advantage.
+
             <p>Click 'Start Demo' below to explore the user interface of our
-            application and learn more
-            about its features.</p>
+                application and learn more
+                about its features.</p>
         </div>
 
         <div id="parentDemo">
@@ -458,6 +466,7 @@
         });
         // end of sidebar script
 
+
         //start of demo animation 
         $("#demobox1").hide();
         $("#demobox2").hide();
@@ -467,6 +476,20 @@
         $("#animationvid").hide();
 
         $("#demoButton").on("click", function () {
+            checkdemo();
+        });
+
+        var checkdemo = function () {
+            idCheck = $("#demobox1").css("marginLeft");
+            if (idCheck == "55%") {
+                demo();
+            } else {
+                $("#demobox1").css("marginLeft", "55%").css("width", "25%").css("marginTop", "0%");
+                demo();
+            }
+        }
+
+        var demo = function () {
             $("#demobox1").fadeIn();
             $("#findFeature").fadeIn();
             $("#demoButton").fadeOut();
@@ -662,25 +685,18 @@
                     $("#animationvid").trigger("play")
             }, 50000);
 
-        }); // end of demo animation 
+            setTimeout(function () {
+                $("#animationvid").fadeOut(1000)
+            }, 55000);
 
-    });
+            $("#demoButton").delay(55000).animate({
+                backgroundColor: "#EC6439",
+                color: "white",
+                opacity: "1",
+            }).fadeIn();
 
-    $(document).delay(55000).queue(function () {
-        $("#animationvid").fadeOut(1000);
-
-        $("#demoButton").animate({
-            backgroundColor: "#EC6439",
-            color: "white",
-            opacity: "1",
-        }).fadeIn();
-
-        $("#demobox1").animate({
-            marginLeft: "55%",
-            width: "25%",
-            marginTop: "0%",
-        })
-    });
+        }
+    }); // end of demo animation 
 
 </script>
 
