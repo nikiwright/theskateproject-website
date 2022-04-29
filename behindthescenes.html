@@ -13,7 +13,6 @@
 
 
     <style>
-    
         /* div {
             border: 1px solid red;
         } */
@@ -142,9 +141,6 @@
 
     <script>
 
-        // localStorage.setItem
-        // localStorage.getItem
-
         var gallerytitle = "Skate Project Behind the Scenes Gallery";
 
         var gallery = {
@@ -153,25 +149,28 @@
                 {
                     "url": "SkateWebsite.png",
                     "caption": "The Skate Project Consumer Website MVP1",
+                    "id": "img1",
                 },
                 {
                     "url": "SkatePage2.png",
                     "caption": "The Skate Project Consumer Website MVP2",
+                    "id": "img2",
                 },
                 {
                     "url": "SkatePage3.png",
                     "caption": "The Skate Project Consumer Website MVP3",
-                    "id": "img5"
+                    "id": "img3",
                 },
                 {
                     "url": "SkateTeam.png",
                     "caption": "Skate Project Team",
-                    "credit": "Natalie So",
+                    "id": "img4",
                 },
 
                 {
                     "url": "MarcosSkating.png",
                     "caption": "Marcos Skating",
+                    "id": "img5",
                 },
             ]
         }
@@ -188,11 +187,19 @@
 
             for (i = 0; i < gallery.imagedata.length; i++) {
                 thumbcode += "<div class='imagebox'>"
-                thumbcode += "<img src='" + gallery.imagedata[i].url + "' class='thumbimg' index='" + i + "'>";
+                thumbcode += "<img src='" + gallery.imagedata[i].url + "' class='thumbimg' id='" + gallery.imagedata[i].id + "'>";
                 thumbcode += "</div>";
             }
 
             $("#thumbs").html(thumbcode);
+
+            for (i = 0; i < gallery.imagedata.length; i++) {
+                var clicked = localStorage.getItem(gallery.imagedata[i].id)
+
+                if (clicked === "true") {
+                    $("#" + gallery.imagedata[i].id).css("opacity", "0.2")
+                }
+            }
 
             for (i = 0; i < gallery.imagedata.length; i++) {
                 $("#thumb" + i).hide().delay(700 * i).slideDown(1000);
@@ -200,16 +207,48 @@
 
 
             $(".thumbimg").on("click", function () {
-                i = $(this).attr("index");
-                updateimage(gallery.imagedata[i].url, gallery.imagedata[i].caption, gallery.imagedata[i].credit);
+                i = $(this).attr("id");
+                i = gallery.imagedata.findIndex(function (x) {
+                    return x.id == i
+                })
+                updateimage(gallery.imagedata[i].url, gallery.imagedata[i].caption, gallery.imagedata[i].credit, gallery.imagedata[i].id);
+
             })
 
         }
 
-        var updateimage = function (src, caption, credit) {
+        var updateimage = function (src, caption, credit, id) {
             $("#mainphoto").attr("src", src);
+            // $("#mainphoto").attr("id", id)
+            // $("#mainphoto").attr("onclick", changeimg)
             $("#caption").html("<br>" + caption + "<br><br>");
+            changeimg(id)
         }
+
+        changeimg = function (id) {
+            localStorage.setItem(id, "true")
+
+            var clicked = localStorage.getItem(id)
+
+            if (clicked === "true") {
+                $("#" + id).css("opacity", "0.2")
+            }
+
+            var f=1 
+
+            for (i = 0; i < gallery.imagedata.length; i++) {
+                var clicked = localStorage.getItem(gallery.imagedata[i].id)
+
+                if (clicked != "true") {
+                    f = 0
+                    break
+                }
+            }
+            if (f == 1) {
+                alert("Thank you for viewing the gallery!")
+            }
+        }
+
 
         $(document).ready(function () {
 
