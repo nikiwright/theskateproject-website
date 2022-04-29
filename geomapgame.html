@@ -21,14 +21,16 @@
             height: auto;
             top: 9%;
             left: 4%;
+            z-index: 5
         }
 
-        #arrowhover{
+        #arrowhover {
             position: absolute;
             width: 6%;
             height: auto;
             top: 9%;
             left: 4%;
+            z-index: 4
         }
 
         #title {
@@ -259,7 +261,7 @@
 
         @media screen and (max-width: 400px) {
 
-            #title {  
+            #title {
                 margin-top: 25%;
             }
 
@@ -275,7 +277,6 @@
             }
 
         }
-
     </style>
 </head>
 
@@ -291,13 +292,13 @@
 
     <div id="backarrow">
         <a href="gamepage.html">
-          <img class='image' src="backarrow.png">
+            <img class='image' src="backarrow.png">
         </a>
     </div>
 
     <div id="arrowhover">
         <a href="gamepage.html">
-          <img class='image' src="backarrowhover.png">
+            <img class='image' src="backarrowhover.png">
         </a>
     </div>
 
@@ -419,14 +420,15 @@
     $(document).ready(function () {
 
         $("#arrowhover").hide();
-        $("#backarrow").on('mouseover', function(){
+
+        $("#backarrow").on('mouseover', function () {
             $(this).hide();
             $("#arrowhover").show();
         });
 
-        $("#backarrow").on('mouseout', function(){
-            $(this).show();
-            $("#").hide();
+        $("#arrowhover").on('mouseout', function () {
+            $(this).hide();
+            $("#backarrow").show();
         });
 
         // start of sidebar script
