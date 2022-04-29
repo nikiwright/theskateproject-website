@@ -366,7 +366,7 @@
 
         <div id="result">
             <div id="text"></div>
-            <p><input type="text" id="#inputName"></p>
+            <p><input type="text" id="userInput"></p>
             <div id="tryagainbtn">Try again</div>
         </div>
 
@@ -544,13 +544,6 @@
     var images = ['venice.jpeg', 'vans.jpeg', 'moor.jpeg', 'culvercity.jpeg', 'hollywoodhigh.jpeg', 'stoner.jpeg', 'garvanza.jpeg', 'elsereno.jpeg'];
     var i = 0;
     var checktest = 0;
-    $(document).ready(function () {
-        if (localStorage.getItem("score")) {
-            score = localStorage.getItem("score", parseInt(localStorage.getItem("score")));
-            name = localStorage.getItem("nameVariable");
-            document.querySelector("#highScores").innerHTML = name + ': ' + score + '/8';
-        }
-    });
 
     function next() {
         console.log("nexti: " + i);
@@ -619,7 +612,7 @@
             }, 1500);
             $(idChosen).show();
             $(capChosen).show();
-            $("#correctsf").trigger("play");
+            // $("#correctsf").trigger("play");
             x++
             $("#score").html("Score: " + x + "/8");
             if (i == "7") {
@@ -642,7 +635,7 @@
             console.log($(".draggable").position(field.top + field.left));
             $(idChosen).show();
             $(capChosen).show();
-            $("#incorrectsf").trigger("play");
+            // $("#incorrectsf").trigger("play");
             $("#incorrectsf").prop("volume", 0.5)
             console.log("NOT WORKING");
             if (i == "7") {
@@ -657,6 +650,14 @@
     };
 
     var score = 0
+
+    $(document).ready(function () {
+        if (localStorage.getItem("score")) {
+            score = localStorage.getItem("score", parseInt(localStorage.getItem("score")));
+            name = localStorage.getItem("nameVariable");
+            document.querySelector("#highScores").innerHTML = name + ': ' + score + '/8';
+        }
+    });
 
     $("#result").hide();
     $("#tryagainbtn").hide();
@@ -678,9 +679,10 @@
             $("#tryagainbtn").show();
             $("#tryagainbtn").html("Ok");
             $("#text").html('You got a highscore! Enter name:');
-            var name = $("#inputName").value;
 
             $("#tryagainbtn").on("click", function () {
+                var name = document.querySelector("#userInput").value;
+                // console.log(name)
                 localStorage.setItem("score", x.toString());
                 localStorage.setItem("nameVariable", name.toString());
                 document.querySelector("#highScores").innerHTML = name + ': ' + x + '/8';
