@@ -91,6 +91,16 @@
             left: 70%;
         }
 
+        .caption {
+            font-size: 10pt;
+            color: black;
+            font-weight: bold;
+            width: 100%;
+            left: 105%;
+            top: 15%;
+            position: absolute;
+        }
+
         #venicebeach {
             border: 3px #EC6439 dotted;
             position: absolute;
@@ -181,6 +191,7 @@
 
         #checkButton:hover {
             background: lightgrey;
+            font-weight: bold;
         }
 
         #score {
@@ -214,6 +225,48 @@
 
         #highScores {
             font-size: 16pt;
+        }
+
+        #result {
+            position: absolute;
+            z-index: 10;
+            border: 3px solid #EC6439;
+            width: 30%;
+            padding: 1%;
+            background-color: whitesmoke;
+            color: black;
+            opacity: 0.9;
+            margin-top: 15%;
+            margin-left: 30%;
+            font-size: 16pt;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #tryagainbtn {
+            border: 2px solid #EC6439;
+            border-radius: 20px;
+            outline: none;
+            background: #EC6439;
+            padding: 10px 30px;
+            font-size: 20px;
+            color: black;
+            cursor: pointer;
+            margin: 10px auto;
+            width: 20%;
+            text-align: center;
+        }
+
+        #tryagainbtn:hover {
+            background: black;
+            color: white;
+        }
+
+        input {
+            border: 1px black solid;
+            padding: 10px;
+            margin-left: 5%;
+            font-size: 20px;
         }
 
         @media screen and (max-width: 1240px) {
@@ -310,6 +363,12 @@
 
     <div id="gameDiv">
 
+        <div id="result">
+            <div id="text"></div>
+            <p><input type="text" id="#inputName"></p>
+            <div id="tryagainbtn">Try again</div>
+        </div>
+
         <div id="map">
             <img class="draggable" src="logo.png">
 
@@ -317,34 +376,42 @@
 
             <div id="venicebeach">
                 <img id="venice" class="zoneimg" src="skatepark_images/venice.jpeg">
+                <div id="venicecap" class="caption">Venice Beach</div>
             </div>
 
             <div id="vanszone">
                 <img id="vans" class="zoneimg" src="skatepark_images/vans.jpeg">
+                <div id="vanscap" class="caption">Van's Off the Wall</div>
             </div>
 
             <div id="moorpark">
                 <img id="moor" class="zoneimg" src="skatepark_images/moor.jpeg">
+                <div id="moorcap" class="caption">Moorpark</div>
             </div>
 
             <div id="culver">
                 <img id="culverpark" class="zoneimg" src="skatepark_images/culvercity.jpeg">
+                <div id="culvercap" class="caption">Culver City Skatepark</div>
             </div>
 
             <div id="hollywoodhigh">
                 <img id="hollywood" class="zoneimg" src="skatepark_images/hollywoodhigh.jpeg">
+                <div id="hollycap" class="caption">Hollywood Highschool</div>
             </div>
 
             <div id="stonerpark">
                 <img id="stoner" class="zoneimg" src="skatepark_images/stoner.jpeg">
+                <div id="stonercap" class="caption">Stoner Park</div>
             </div>
 
             <div id="garvanza">
                 <img id="garpark" class="zoneimg" src="skatepark_images/garvanza.jpeg">
+                <div id="garvanzacap" class="caption">Garvanza Park</div>
             </div>
 
             <div id="elsereno">
                 <img id="sereno" class="zoneimg" src="skatepark_images/elsereno.jpeg">
+                <div id="elserenocap" class="caption">El Sereno Park</div>
             </div>
 
         </div>
@@ -359,7 +426,7 @@
                 <div id="score">Score: 0/8 </div>
 
                 <div id="scoreboard">
-                    <h2>HIGH SCORE</h2>
+                    <h2>HIGH SCORE BOARD</h2>
                     <div id="highScores"></div>
                 </div>
 
@@ -456,6 +523,8 @@
 
         //zone images
         $(".zoneimg").hide();
+        $(".caption").hide();
+
 
         $(function () {
             $(".draggable").draggable({
@@ -478,7 +547,7 @@
         if (localStorage.getItem("score")) {
             score = localStorage.getItem("score", parseInt(localStorage.getItem("score")));
             name = localStorage.getItem("nameVariable");
-            document.querySelector("#highScores").innerHTML = name + ': ' + score + '/18';
+            document.querySelector("#highScores").innerHTML = name + ': ' + score + '/8';
         }
     });
 
@@ -499,27 +568,35 @@
         if ($(".slider-img").attr("src") == "skatepark_images/venice.jpeg") {
             var imageChosen = "#venicebeach";
             var idChosen = "#venice";
+            var capChosen = "#venicecap";
         } else if ($(".slider-img").attr("src") == "skatepark_images/vans.jpeg") {
             var imageChosen = "#vanszone";
             var idChosen = "#vans";
+            var capChosen = "#vanscap";
         } else if ($(".slider-img").attr("src") == "skatepark_images/moor.jpeg") {
             var imageChosen = "#moorpark";
             var idChosen = "#moor";
+            var capChosen = "#moorcap";
         } else if ($(".slider-img").attr("src") == "skatepark_images/culvercity.jpeg") {
             var imageChosen = "#culver";
             var idChosen = "#culverpark";
+            var capChosen = "#culvercap";
         } else if ($(".slider-img").attr("src") == "skatepark_images/hollywoodhigh.jpeg") {
             var imageChosen = "#hollywoodhigh";
             var idChosen = "#hollywood";
+            var capChosen = "#hollycap";
         } else if ($(".slider-img").attr("src") == "skatepark_images/stoner.jpeg") {
             var imageChosen = "#stonerpark";
             var idChosen = "#stoner";
+            var capChosen = "#stonercap";
         } else if ($(".slider-img").attr("src") == "skatepark_images/garvanza.jpeg") {
             var imageChosen = "#garvanza";
             var idChosen = "#garpark";
+            var capChosen = "#garvanzacap";
         } else if ($(".slider-img").attr("src") == "skatepark_images/elsereno.jpeg") {
             var imageChosen = "#elsereno";
             var idChosen = "#sereno";
+            var capChosen = "#elserenocap";
         }
 
         var pinleft = document.querySelector(".draggable").style.left;
@@ -530,14 +607,17 @@
         var field = $(imageChosen).position()
         var pin = $(".draggable").position()
 
+        console.log(pin);
+
         // console.log("Pin: " + pin.left + ", " + pin.top + ", Section: " + field.left + ", " + field.top);
 
-        if (pin.left > (field.left - 20) && pin.left < (field.left + 20) && pin.top + 10 > (field.top - 20) && pin.top < (field.top + 20)) {
+        if (pin.left > (field.left - 50) && pin.left < (field.left + 50) && pin.top + 50 > (field.top - 50) && pin.top < (field.top + 50)) {
             $(".draggable").attr('src', 'correct.png');
             setTimeout(function () {
                 $(".draggable").attr('src', 'logo.png');
-            }, 2000);
+            }, 1500);
             $(idChosen).show();
+            $(capChosen).show();
             $("#correctsf").trigger("play");
             x++
             $("#score").html("Score: " + x + "/8");
@@ -560,6 +640,7 @@
             }, 2000);
             console.log($(".draggable").position(field.top + field.left));
             $(idChosen).show();
+            $(capChosen).show();
             $("#incorrectsf").trigger("play");
             $("#incorrectsf").prop("volume", 0.5)
             console.log("NOT WORKING");
@@ -576,6 +657,9 @@
 
     var score = 0
 
+    $("#result").hide();
+    $("#tryagainbtn").hide();
+
     function checkHighScore(x) {
 
         if (localStorage.getItem("score")) {
@@ -585,17 +669,33 @@
             score = "0";
         }
         score = parseInt(score);
-        console.log("In function score: " + score);
-        console.log(x + " >= " + score + " <- is this right?");
+        // console.log("In function score: " + score);
+        // console.log(x + " >= " + score + " <- is this right?");
         if (x >= score) {
 
-            var name = prompt('You got a highscore! Enter name:');
-            localStorage.setItem("score", x.toString())
-            localStorage.setItem("nameVariable", name.toString());
-            document.querySelector("#highScores").innerHTML = name + ': ' + x + '/18';
+            $("#result").show();
+            $("#tryagainbtn").show();
+            $("#tryagainbtn").html("Ok");
+            $("#text").html('You got a highscore! Enter name:');
+            var name = $("#inputName").value;
+
+            $("#tryagainbtn").on("click", function () {
+                localStorage.setItem("score", x.toString());
+                localStorage.setItem("nameVariable", name.toString());
+                document.querySelector("#highScores").innerHTML = name + ': ' + x + '/8';
+                document.location.reload();
+            });
+
+            // var name = prompt('You got a highscore! Enter name:');
+
         } else {
-            alert("Sorry, you didn't beat the highscore. Try again!")
-            document.location.reload()
+            $("#result").show();
+            $("#tryagainbtn").show();
+            $("input").hide();
+            $("#text").html("Sorry, you didn't beat the highscore. Try again!");
+            $("#tryagainbtn").on("click", function () {
+                document.location.reload();
+            });
         }
 
     }
@@ -603,7 +703,7 @@
     function game0ver() {
         // console.log("gameoverworking " + x + i)
         checkHighScore(x);
-        console.log("Pre function: " + localStorage.getItem("score"));
+        // console.log("Pre function: " + localStorage.getItem("score"));
     }
 
     $("#checkButton").on("click", function () {
