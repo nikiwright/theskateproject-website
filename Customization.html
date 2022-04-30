@@ -105,9 +105,9 @@
             height: 60%;
             width: 40%;
             top: 20%;
-            left:15%;
+            left: 15%;
             margin: 40px;
-            background-repeat:no-repeat;
+            background-repeat: no-repeat;
             /* background-color:pink; */
         }
 
@@ -151,10 +151,6 @@
         <div class="bar middle"></div>
         <div class="bar bottom"></div>
     </div>
-
-
-
-
 
 
     <div id="leftcontainer">
@@ -206,102 +202,100 @@
 
         </div>
 
-            <!-- nav-right -->
-    <div class="sidebar">
-        <ul class="sidebar-list">
-            <li class="sidebar-item"><a href="problempage.html" class="sidebar-anchor">The Problem</a></li>
-            <li class="sidebar-item"><a href="productpage.html" class="sidebar-anchor">Product</a></li>
-            <li class="sidebar-item"><a href="marketpage.html" class="sidebar-anchor">Market</a></li>
-            <li class="sidebar-item"><a href="businesspilotpage.html" class="sidebar-anchor">Business Pilot</a></li>
-            <li class="sidebar-item"><a href="nextsteps.html" class="sidebar-anchor">Next Steps</a></li>
-            <li class="sidebar-item"><a href="askpage.html" class="sidebar-anchor">Our Ask</a></li>
-            <div id="itemParent">
-                <li class="sidebar-item" style="margin-bottom: 15px"><a class="sidebar-anchor"> About Us </a>
-                </li>
-                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="skateteam.html" class="sidebar-mini">
-                        Skate Team </a>
+        <!-- nav-right -->
+        <div class="sidebar">
+            <ul class="sidebar-list">
+                <li class="sidebar-item"><a href="problempage.html" class="sidebar-anchor">The Problem</a></li>
+                <li class="sidebar-item"><a href="productpage.html" class="sidebar-anchor">Product</a></li>
+                <li class="sidebar-item"><a href="marketpage.html" class="sidebar-anchor">Market</a></li>
+                <li class="sidebar-item"><a href="businesspilotpage.html" class="sidebar-anchor">Business Pilot</a></li>
+                <li class="sidebar-item"><a href="nextsteps.html" class="sidebar-anchor">Next Steps</a></li>
+                <li class="sidebar-item"><a href="askpage.html" class="sidebar-anchor">Our Ask</a></li>
+                <div id="itemParent">
+                    <li class="sidebar-item" style="margin-bottom: 15px"><a class="sidebar-anchor"> About Us </a>
+                    </li>
+                    <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="skateteam.html" class="sidebar-mini">
+                            Skate Team </a>
+                    </div>
+                    <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="webteam.html" class="sidebar-mini">
+                            Web
+                            Team </a></div>
+                    <div class="hiddenFirst"> <a href="behindthescenes.html" class="sidebar-mini"> Behind the Scenes
+                        </a>
+                    </div>
                 </div>
-                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="webteam.html" class="sidebar-mini"> Web
-                        Team </a></div>
-                <div class="hiddenFirst"> <a href="behindthescenes.html" class="sidebar-mini"> Behind the Scenes </a>
-                </div>
-            </div>
-            <li class="sidebar-item"><a href="gamepage.html" class="sidebar-anchor">Explore Games</a></li>
-        </ul>
-    </div>
+                <li class="sidebar-item"><a href="gamepage.html" class="sidebar-anchor">Explore Games</a></li>
+            </ul>
+        </div>
 
-    <!-- nav bar button  -->
-
-
-        
+        <!-- nav bar button  -->
 
         <script>
 
-$(document).ready(function () {
+            $(document).ready(function () {
 
 
-$("#arrowhover").hide();
+                $("#arrowhover").hide();
 
-$("#backarrow").on('mouseover', function () {
-    $(this).hide();
-    $("#arrowhover").show();
-});
+                $("#backarrow").on('mouseover', function () {
+                    $(this).hide();
+                    $("#arrowhover").show();
+                });
 
-$("#arrowhover").on('mouseout', function () {
-    $(this).hide();
-    $("#backarrow").show();
-});
+                $("#arrowhover").on('mouseout', function () {
+                    $(this).hide();
+                    $("#backarrow").show();
+                });
 
-</script>
+        </script>
 
 
-            <script>
-            document.querySelector("#halfpipe").addEventListener("click", function () {
-                document.querySelector("#productcontainer").style.backgroundImage = "url('backyard.jpeg')";
-            })
+        <script>
+    document.querySelector("#halfpipe").addEventListener("click", function () {
+        document.querySelector("#productcontainer").style.backgroundImage = "url('backyard.jpeg')";
+    })
 
-            document.querySelector("#street").addEventListener("click", function () {
-                document.querySelector("#productcontainer").style.backgroundImage = "url('street.jpeg')"; backgroundRepeat = "no-repeat"; backgroundSize = "100%";
-               
-            })
+    document.querySelector("#street").addEventListener("click", function () {
+        document.querySelector("#productcontainer").style.backgroundImage = "url('street.jpeg')"; backgroundRepeat = "no-repeat"; backgroundSize = "100%";
 
-            document.querySelector("#park").addEventListener("click", function () {
-                document.querySelector("#productcontainer").style.backgroundImage = "url('bowl.jpeg')";
-            })
+    })
 
-            document.querySelector("#neon").addEventListener("click", function () {
-                document.querySelector("#skateboard").style.backgroundImage = "url('neon.png')"; backgroundRepeat = "no-repeat";
-            })
+    document.querySelector("#park").addEventListener("click", function () {
+        document.querySelector("#productcontainer").style.backgroundImage = "url('bowl.jpeg')";
+    })
 
-            document.querySelector("#trippy").addEventListener("click", function () {
-                document.querySelector("#skateboard").style.backgroundImage = "url('trippyboard.png')"; backgroundRepeat = "no-repeat"; backgroundSize = "100%";
+    document.querySelector("#neon").addEventListener("click", function () {
+        document.querySelector("#skateboard").style.backgroundImage = "url('neon.png')"; backgroundRepeat = "no-repeat";
+    })
 
-            })
+    document.querySelector("#trippy").addEventListener("click", function () {
+        document.querySelector("#skateboard").style.backgroundImage = "url('trippyboard.png')"; backgroundRepeat = "no-repeat"; backgroundSize = "100%";
 
-            document.querySelector("#cartoon").addEventListener("click", function () {
-                document.querySelector("#skateboard").style.backgroundImage = "url('cartoon.png')";
+    })
 
-                // put these into photoshop and make them smaller, transparent, and the same size as the neon board
-            })
+    document.querySelector("#cartoon").addEventListener("click", function () {
+        document.querySelector("#skateboard").style.backgroundImage = "url('cartoon.png')";
 
-            
-    
+        //put these into photoshop and make them smaller, transparent, and the same size as the neon board
+    })
 
-            document.querySelector("#tyshawn").addEventListener("click", function () {
-                document.querySelector("#proskater").style.backgroundImage = "url('tyshawnjones.png')";
-            })
 
-            document.querySelector("#tony").addEventListener("click", function () {
-                document.querySelector("#proskater").style.backgroundImage = "url('tonyhawk.png')"; backgroundRepeat = "no-repeat"; backgroundSize = "100%";
 
-            })
 
-            document.querySelector("#sky").addEventListener("click", function () {
-                document.querySelector("#proskater").style.backgroundImage = "url('skybrown.png')";
-            })
+    document.querySelector("#tyshawn").addEventListener("click", function () {
+        document.querySelector("#proskater").style.backgroundImage = "url('tyshawnjones.png')";
+    })
 
-            
-   
+    document.querySelector("#tony").addEventListener("click", function () {
+        document.querySelector("#proskater").style.backgroundImage = "url('tonyhawk.png')"; backgroundRepeat = "no-repeat"; backgroundSize = "100%";
+
+    })
+
+    document.querySelector("#sky").addEventListener("click", function () {
+        document.querySelector("#proskater").style.backgroundImage = "url('skybrown.png')";
+    })
+
+
     $(".hiddenFirst").hide();
 
     $("#itemParent").on("mouseover", function () {
@@ -325,11 +319,11 @@ $("#arrowhover").on('mouseout', function () {
 
 
 
-            
+
 
         </script>
 
-        
+
     </div>
 
 
@@ -337,5 +331,6 @@ $("#arrowhover").on('mouseout', function () {
 
 
 
+//
 // <!-- Notes:
 // "Customize" product colors: By taking a graphic and breaking it down into multiple transparent GIFs, you can set up a layer structure that allows the user to "build" products such as T-shirts with different colors or cars with different colors and features (spoilers, window tinting, etc.). For a simple implementation of this, take a look at this custom T-Shift page. NOTE: If you want to use this as your customization it needs to have multiple aspects, like different logos AND colors. If you want to build that in class save the demo files of the shirt. -->
