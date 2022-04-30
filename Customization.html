@@ -30,6 +30,10 @@
             font-family: Helvetica;
         }
 
+        .image {
+            width: 100%;
+        }
+
         #productcontainer {
             /* background-color:green; */
             float: right;
@@ -76,6 +80,24 @@
             visibility: visible;
         }
 
+        #backarrow {
+            position: absolute;
+            width: 6%;
+            height: auto;
+            top: 9%;
+            left: 4%;
+            z-index: 5
+        }
+
+        #arrowhover {
+            position: absolute;
+            width: 6%;
+            height: auto;
+            top: 9%;
+            left: 4%;
+            z-index: 4
+        }
+
         #proskater {
             position: relative;
             /* background-color:aqua; */
@@ -109,6 +131,32 @@
 <body>
 
     <div id="title"><strong>Choose Your Skate Vibe!</strong></div>
+
+    <div id="backarrow">
+        <a href="gamepage.html">
+            <img class='image' src="backarrow.png">
+        </a>
+    </div>
+
+
+
+    <div id="arrowhover">
+        <a href="gamepage.html">
+            <img class='image' src="backarrowhover.png">
+        </a>
+    </div>
+
+    <div class="button" id="btn">
+        <div class="bar top"></div>
+        <div class="bar middle"></div>
+        <div class="bar bottom"></div>
+    </div>
+
+
+
+
+
+
     <div id="leftcontainer">
         <br><br><br><br><br>
         Whether you're a street skater, or like shredding half-pipes, there is definitely a skating community for you to
@@ -158,31 +206,68 @@
 
         </div>
 
+            <!-- nav-right -->
+    <div class="sidebar">
+        <ul class="sidebar-list">
+            <li class="sidebar-item"><a href="problempage.html" class="sidebar-anchor">The Problem</a></li>
+            <li class="sidebar-item"><a href="productpage.html" class="sidebar-anchor">Product</a></li>
+            <li class="sidebar-item"><a href="marketpage.html" class="sidebar-anchor">Market</a></li>
+            <li class="sidebar-item"><a href="businesspilotpage.html" class="sidebar-anchor">Business Pilot</a></li>
+            <li class="sidebar-item"><a href="nextsteps.html" class="sidebar-anchor">Next Steps</a></li>
+            <li class="sidebar-item"><a href="askpage.html" class="sidebar-anchor">Our Ask</a></li>
+            <div id="itemParent">
+                <li class="sidebar-item" style="margin-bottom: 15px"><a class="sidebar-anchor"> About Us </a>
+                </li>
+                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="skateteam.html" class="sidebar-mini">
+                        Skate Team </a>
+                </div>
+                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="webteam.html" class="sidebar-mini"> Web
+                        Team </a></div>
+                <div class="hiddenFirst"> <a href="behindthescenes.html" class="sidebar-mini"> Behind the Scenes </a>
+                </div>
+            </div>
+            <li class="sidebar-item"><a href="gamepage.html" class="sidebar-anchor">Explore Games</a></li>
+        </ul>
+    </div>
+
+    <!-- nav bar button  -->
+
+
+        
+
         <script>
-            let halfpipe = document.querySelector('#halfpipe');
-            let streetskate = document.querySelector('#street');
-            let skatepark = document.querySelector('#park');
 
-            // halfpipe.addEventListener('click', () =>{
-            // document.querySelector("#productcontainer").style.backgroundImage = "url('backyard.jpeg')";
-            // });
+$(document).ready(function () {
 
-            // scripting for the skatepark scene
 
+$("#arrowhover").hide();
+
+$("#backarrow").on('mouseover', function () {
+    $(this).hide();
+    $("#arrowhover").show();
+});
+
+$("#arrowhover").on('mouseout', function () {
+    $(this).hide();
+    $("#backarrow").show();
+});
+
+</script>
+
+
+            <script>
             document.querySelector("#halfpipe").addEventListener("click", function () {
                 document.querySelector("#productcontainer").style.backgroundImage = "url('backyard.jpeg')";
             })
 
             document.querySelector("#street").addEventListener("click", function () {
                 document.querySelector("#productcontainer").style.backgroundImage = "url('street.jpeg')"; backgroundRepeat = "no-repeat"; backgroundSize = "100%";
-                // ^my background image wont follow this command
+               
             })
 
             document.querySelector("#park").addEventListener("click", function () {
                 document.querySelector("#productcontainer").style.backgroundImage = "url('bowl.jpeg')";
             })
-
-            // scripting for the skateboard decks 
 
             document.querySelector("#neon").addEventListener("click", function () {
                 document.querySelector("#skateboard").style.backgroundImage = "url('neon.png')"; backgroundRepeat = "no-repeat";
@@ -199,7 +284,8 @@
                 // put these into photoshop and make them smaller, transparent, and the same size as the neon board
             })
 
-            // scripting for the skate mentors option
+            
+    
 
             document.querySelector("#tyshawn").addEventListener("click", function () {
                 document.querySelector("#proskater").style.backgroundImage = "url('tyshawnjones.png')";
@@ -214,8 +300,36 @@
                 document.querySelector("#proskater").style.backgroundImage = "url('skybrown.png')";
             })
 
+            
+   
+    $(".hiddenFirst").hide();
+
+    $("#itemParent").on("mouseover", function () {
+        $(".hiddenFirst").show();
+    });
+    $("#itemParent").on("mouseout", function () {
+        $(".hiddenFirst").hide();
+    });
+
+    function toggleSidebar() {
+        $(".button").toggleClass("active");
+        $(".sidebar").toggleClass("move-to-left");
+        // $(".move-to-left").css("z-index", 2);
+        // $(".button").css("z-index", 3);
+        $(".sidebar-item").toggleClass("active");
+    }
+
+    $(".button").on("click tap", function () {
+        toggleSidebar();
+    });
+
+
+
+            
 
         </script>
+
+        
     </div>
 
 
@@ -223,5 +337,5 @@
 
 
 
-<!-- Notes:
-"Customize" product colors: By taking a graphic and breaking it down into multiple transparent GIFs, you can set up a layer structure that allows the user to "build" products such as T-shirts with different colors or cars with different colors and features (spoilers, window tinting, etc.). For a simple implementation of this, take a look at this custom T-Shift page. NOTE: If you want to use this as your customization it needs to have multiple aspects, like different logos AND colors. If you want to build that in class save the demo files of the shirt. -->
+// <!-- Notes:
+// "Customize" product colors: By taking a graphic and breaking it down into multiple transparent GIFs, you can set up a layer structure that allows the user to "build" products such as T-shirts with different colors or cars with different colors and features (spoilers, window tinting, etc.). For a simple implementation of this, take a look at this custom T-Shift page. NOTE: If you want to use this as your customization it needs to have multiple aspects, like different logos AND colors. If you want to build that in class save the demo files of the shirt. -->
