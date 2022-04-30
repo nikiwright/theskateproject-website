@@ -1,0 +1,256 @@
+<html>
+
+<head>
+    <title>
+        Search Page
+    </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&display=swap" rel="stylesheet">
+    <link href="skateprojectshared.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        /* div {
+            border: 2px solid red;
+        } */
+        body {
+            background-color: rgb(70, 70, 70);
+        }
+
+        #result {
+            position: relative;
+            opacity: 1;
+            visibility: hidden;
+            height: 100%;
+
+        }
+
+        #box {
+            background-color: rgb(216, 146, 67);
+            color: rgb(255, 255, 255);
+            border-radius: 5px;
+            text-align: center;
+            width: 900px;
+            margin: auto;
+            height: 100px;
+            float: center;
+            margin-top: 40px;
+        }
+
+        #container {
+            margin: auto;
+            width: 1000px;
+            background-color: rgb(221, 102, 23);
+            color: white;
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        @media screen and (max-width: 1240px) {
+            #box {
+                width: 100%;
+            }
+
+        }
+
+        @media screen and (max-width: 390px) {
+           #box {
+            background-color: rgb(216, 146, 67);
+            color: rgb(255, 255, 255);
+            border-radius: 5px;
+            text-align: center;
+            width: 500px;
+            margin: auto;
+            height: 100px;
+            float: center;
+            margin-top: 40px;
+           }
+           #container {
+            margin: auto;
+            width: 600px;
+            background-color: rgb(221, 102, 23);
+            color: white;
+            text-align: center;
+            padding-top: 10px;
+        }
+        }
+    </style>
+</head>
+
+<body>
+
+    <br>
+    <div id="sitecontainer">
+
+        <div id="logo">
+            <a href="skateprojecthomepage.html">
+                <img src="logo.png">
+            </a>
+        </div>
+        <div id="container">
+            <h1>Find anything on this website!</h1>
+            <br>
+            <form>
+                <input type="text" id="searchbox">
+                <input type="button" value="Search!" id="searchbutton">
+            </form>
+            <br><br>
+        </div>
+        <div id="result">
+
+        </div>
+
+
+    </div>
+
+
+    <!--Outside sitecontainer i.e invisible until called-->
+
+    <div class="button" id="btn">
+        <div class="bar top"></div>
+        <div class="bar middle"></div>
+        <div class="bar bottom"></div>
+    </div>
+
+    <!-- nav-right -->
+    <div class="sidebar">
+        <ul class="sidebar-list">
+            <li class="sidebar-item"><a href="problempage.html" class="sidebar-anchor">The Problem</a></li>
+            <li class="sidebar-item"><a href="productpage.html" class="sidebar-anchor">Product</a></li>
+            <li class="sidebar-item"><a href="marketpage.html" class="sidebar-anchor">Market</a></li>
+            <li class="sidebar-item"><a href="businesspilotpage.html" class="sidebar-anchor">Business Pilot</a></li>
+            <li class="sidebar-item"><a href="nextsteps.html" class="sidebar-anchor">Next Steps</a></li>
+            <li class="sidebar-item"><a href="askpage.html" class="sidebar-anchor">Our Ask</a></li>
+            <div id="itemParent">
+                <li class="sidebar-item" style="margin-bottom: 15px"><a class="sidebar-anchor"> About Us </a>
+                </li>
+                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="skateteam.html" class="sidebar-mini">
+                        Skate Team </a>
+                </div>
+                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="webteam.html" class="sidebar-mini"> Web
+                        Team </a></div>
+                <div class="hiddenFirst"> <a href="behindthescenes.html" class="sidebar-mini"> Behind the Scenes </a>
+                </div>
+            </div>
+            <li class="sidebar-item"><a href="gamepage.html" class="sidebar-anchor">Explore Games</a></li>
+            <li class="sidebar-item"><a href="Searchpage.html" class="sidebar-anchor">Search</a></li>
+        </ul>
+    </div>
+
+</body>
+
+<script src="http://iyawebdev.com/jquery.js"></script>
+
+<script>
+    // start sidebar script
+    $(".hiddenFirst").hide();
+
+    $("#itemParent").on("mouseover", function () {
+        $(".hiddenFirst").show();
+    });
+    $("#itemParent").on("mouseout", function () {
+        $(".hiddenFirst").hide();
+    });
+
+    function toggleSidebar() {
+        $(".button").toggleClass("active");
+        $(".sidebar").toggleClass("move-to-left");
+        // $(".move-to-left").css("z-index", 2);
+        // $(".button").css("z-index", 3);
+        $(".sidebar-item").toggleClass("active");
+    }
+
+    $(".button").on("click tap", function () {
+        toggleSidebar();
+    });
+    // end of sidebar script
+
+    var sitename = new Array; var website = new Array; var keywords = new Array; var url = new Array;
+
+    sitename[0] = "The Problem";
+    keywords[0] = "the problem, street skating, why?, skate park, street, sport, the skate project, what is the problem?, what's the problem?, skate";
+    url[0] = "problempage.html";
+
+    sitename[1] = "Product";
+    keywords[1] = "product, demo, skate app, UI, mockup, what is the product, skating app, user interface, application, skate";
+    url[1] = "productpage.html";
+
+    sitename[2] = "Market";
+    keywords[2] = "market, marketplace, industry, market size, $, competitors, competition, target market, who is our target, customer, skate";
+    url[2] = "marketpage.html";
+
+    sitename[3] = "Business Pilot";
+    keywords[3] = "finance, financial projections, pro forma, profit, expense, revenue, 5 year, contingency plan, initial product, pilot, test, skate";
+    url[3] = "businesspilotpage.html";
+
+    sitename[4] = "Next Steps";
+    keywords[4] = "next steps, phases, what's next, campus, phase 1, phase 2, phase 3, stages, introduction, growth, maturity, R&D, growth strategy, skate";
+    url[4] = "nextsteps.html"
+
+    sitename[5] = "Our Ask";
+    keywords[5] = "our ask, ask, seeking, money, investment, IT, app development, costs, invest, $, $100,000, market traction, launch, investor, skate";
+    url[5] = "askpage.html";
+
+    sitename[6] = "Homepage";
+    keywords[6] = "overview, who are we, the skate project, join our community, join, find skate spots, front page, homepage, home, base, skate";
+    url[6] = "skateprojecthomepage.html"
+
+    sitename[7] = "Skate Team";
+    keywords[7] = "Skate team, founders, creators, marcos, alexsis, ry, natalie, noy, skate";
+    url[7] = "skateteam.html"
+
+    sitename[8] = "Web Team";
+    keywords[8] = "web team, development team, andrew, austin, niki, ayonnah, coding, coded, skate";
+    url[8] = "webteam.html"
+
+    sitename[9] = "Behind the Scenes";
+    keywords[9] = "image gallery, gallery, behind the scenes, marcos skating, team picture, consumer website, skate";
+    url[9] = "behindthescenes.html";
+
+    sitename[10] = "Explore Games";
+    keywords[10] = "games, explore games, skate games, geo game, guess, skate spot, customize, skateboard, skate";
+    url[10] = "gamepage.html"
+
+    sitename[11] = "Skate Spot Geo Game";
+    keywords[11] = "skate spot game, geo guesser, geo game, play game, play, fun, game, LA, skate spots, skate";
+    url[11] = "http://webdev.iyaclasses.com/~ddwright/acad275/skatewebsitefinal/geomapgame.html"
+
+    sitename[12] = "Customize Your Skate Vibe";
+    keywords[12] = "game, fun, gaming, customize skateboard, skatepark, new game, gaming, customize your own skateboard, skate";
+    url[12] = "customization.html"
+
+
+    var search = function (phrase) {
+
+        newhtml = ""
+
+        for (i = 0; i < 13; i = i + 1) {
+
+
+            if (sitename[i].toLowerCase().indexOf(phrase.toLowerCase()) != -1 || keywords[i].toLowerCase().indexOf(phrase.toLowerCase()) != -1) {
+                newhtml += "<div id='box'> <h2>" + sitename[i] + "</h2>" + "<h4> <em>" + "<a href='" + url[i] + "'> &nbsp;Click Here!</a>";
+
+            }
+            else if (phrase.length == 0) {
+                newhtml += "<div id='box'> <h2>" + sitename[i] + "</h2>" + "<h4> <em>" + "<a href='" + url[i] + "'> &nbsp;Click Here!</a>";
+            }
+
+        }
+        if (newhtml == "") {
+            newhtml += '<div id="box"> No results found for "' + phrase + '", please try a different search </div>'
+
+        }
+        document.querySelector("#result").innerHTML = newhtml;
+
+    }
+
+    document.querySelector("#searchbutton").addEventListener("click", function () {
+        search(document.querySelector("#searchbox").value);
+        document.querySelector("#result").style.visibility = "visible";
+    })
+
+</script>
+</body>
+
+</html>
