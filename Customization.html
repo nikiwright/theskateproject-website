@@ -16,7 +16,7 @@
         }
 
         .button {
-            background-color: rgb(255, 255, 255);
+            /* background-color: rgb(255, 255, 255); */
             padding: 9px;
             border-radius: 9px;
         }
@@ -281,7 +281,7 @@ $("#arrowhover").on('mouseout', function () {
             document.querySelector("#cartoon").addEventListener("click", function () {
                 document.querySelector("#skateboard").style.backgroundImage = "url('cartoon.png')";
 
-                // put these into photoshop and make them smaller, transparent, and the same size as the neon board
+           
             })
 
             
@@ -314,8 +314,7 @@ $("#arrowhover").on('mouseout', function () {
     function toggleSidebar() {
         $(".button").toggleClass("active");
         $(".sidebar").toggleClass("move-to-left");
-        // $(".move-to-left").css("z-index", 2);
-        // $(".button").css("z-index", 3);
+        
         $(".sidebar-item").toggleClass("active");
     }
 
@@ -337,5 +336,3 @@ $("#arrowhover").on('mouseout', function () {
 
 
 
-// <!-- Notes:
-// "Customize" product colors: By taking a graphic and breaking it down into multiple transparent GIFs, you can set up a layer structure that allows the user to "build" products such as T-shirts with different colors or cars with different colors and features (spoilers, window tinting, etc.). For a simple implementation of this, take a look at this custom T-Shift page. NOTE: If you want to use this as your customization it needs to have multiple aspects, like different logos AND colors. If you want to build that in class save the demo files of the shirt. -->
