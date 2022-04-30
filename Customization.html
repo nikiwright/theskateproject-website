@@ -1,0 +1,227 @@
+<head>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <title>Skateboard Customization Page</title>
+
+    <link href="skateprojectshared.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        #leftcontainer {
+            width: 38%;
+            position: absolute;
+            height: 91%;
+            /* background-color:rgb(255, 255, 255); */
+            margin-top: 70px;
+            padding-left: 10px;
+            line-height: 25px;
+        }
+
+        .button {
+            background-color: rgb(255, 255, 255);
+            padding: 9px;
+            border-radius: 9px;
+        }
+
+        #title {
+            position: absolute;
+            font-size: 55px;
+            /* background-color:yellow; */
+            margin: 0;
+            left: 29%;
+            font-family: Helvetica;
+        }
+
+        #productcontainer {
+            /* background-color:green; */
+            float: right;
+            width: 60%;
+            height: 91%;
+            margin: 0;
+            margin-top: 70px;
+            background-image: url(coverpic.jpeg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        #skateboard {
+            position: absolute;
+            /* background-color:yellow; */
+            z-index: 2;
+            height: 65%;
+            width: 30%;
+            left: 70%;
+            top: 20%;
+            margin: 40px;
+            /* background-image: url(neon.png); */
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+
+        #trippyboard {
+            position: absolute;
+            width: 376px;
+            height: 400px;
+            z-index: 1;
+            left: 18px;
+            top: 84px;
+            visibility: visible;
+        }
+
+        #neonboard {
+            position: absolute;
+            width: 376px;
+            height: 400px;
+            z-index: 2;
+            left: 18px;
+            top: 84px;
+            visibility: visible;
+        }
+
+        #proskater {
+            position: relative;
+            /* background-color:aqua; */
+            z-index: 2;
+            height: 60%;
+            width: 40%;
+            top: 20%;
+            left:15%;
+            margin: 40px;
+            background-repeat:no-repeat;
+            /* background-color:pink; */
+        }
+
+        #optionbuttons {
+            background-color: blue;
+            margin: 0;
+        }
+    </style>
+
+    <script>
+        var changecolor = function (color) {
+            document.getElementById('apDiv1').style.backgroundImage = color;
+
+        }
+
+    </script>
+
+
+</head>
+
+<body>
+
+    <div id="title"><strong>Choose Your Skate Vibe!</strong></div>
+    <div id="leftcontainer">
+        <br><br><br><br><br>
+        Whether you're a street skater, or like shredding half-pipes, there is definitely a skating community for you to
+        join. To help illustrate the inclusive nature that we are trying to strengthen within the skating community, we
+        thought it'd be a great idea to include a way for users of our website to have their turn in creating their
+        perfect skating scene. Decide between a deck design, background, and your favorite pro-skater to get inspiration
+        from!
+        <br><br>
+
+        <strong><em>Pick your skate park!</em></strong><br>
+        <span style="font-size:11px;"> (there's so many different environments to skate on!)</span>
+
+        <br>
+        <input type="button" value="Backyard Half-Pipe" id="halfpipe" name="skatepark">
+        <input type="button" value="Street Skating" id="street" name="skatepark">
+        <input type="button" value="Skate Park" id="park" name="skatepark">
+        <br> <br>
+        <strong><em>Pick your deck design!</em></strong><br>
+        <span style="font-size:11px;"> (deck is what the body of a skateboard is called)</span>
+
+        <br>
+        <input type="button" value="Neon Board" id="neon" name="deckdesign">
+        <input type="button" value="Trippy Board" id="trippy" name="deckdesign">
+        <input type="button" value="Cartoon Board" id="cartoon" name="deckdesign">
+        <br> <br>
+        <strong><em>Pick your skate mentor !</em></strong> <br>
+        <span style="font-size:11px;"> (these are all lists of famous skaters)</span>
+
+        <br>
+        <input type="button" value="Tony Hawk" id="tony" name="skatepark">
+        <input type="button" value="Tyshawn Jones" id="tyshawn" name="skatepark">
+        <input type="button" value="Sky Brown" id="sky" name="skatepark">
+        <div id="optionbuttons">
+
+        </div>
+        <!-- closes buttons -->
+
+    </div>
+    <!-- ^closes leftcontainer -->
+
+    <div id="productcontainer">
+
+        <div id="skateboard">
+        </div>
+
+        <div id="proskater">
+
+        </div>
+
+        <script>
+            let halfpipe = document.querySelector('#halfpipe');
+            let streetskate = document.querySelector('#street');
+            let skatepark = document.querySelector('#park');
+
+            // halfpipe.addEventListener('click', () =>{
+            // document.querySelector("#productcontainer").style.backgroundImage = "url('backyard.jpeg')";
+            // });
+
+            // scripting for the skatepark scene
+
+            document.querySelector("#halfpipe").addEventListener("click", function () {
+                document.querySelector("#productcontainer").style.backgroundImage = "url('backyard.jpeg')";
+            })
+
+            document.querySelector("#street").addEventListener("click", function () {
+                document.querySelector("#productcontainer").style.backgroundImage = "url('street.jpeg')"; backgroundRepeat = "no-repeat"; backgroundSize = "100%";
+                // ^my background image wont follow this command
+            })
+
+            document.querySelector("#park").addEventListener("click", function () {
+                document.querySelector("#productcontainer").style.backgroundImage = "url('bowl.jpeg')";
+            })
+
+            // scripting for the skateboard decks 
+
+            document.querySelector("#neon").addEventListener("click", function () {
+                document.querySelector("#skateboard").style.backgroundImage = "url('neon.png')"; backgroundRepeat = "no-repeat";
+            })
+
+            document.querySelector("#trippy").addEventListener("click", function () {
+                document.querySelector("#skateboard").style.backgroundImage = "url('trippyboard.png')"; backgroundRepeat = "no-repeat"; backgroundSize = "100%";
+
+            })
+
+            document.querySelector("#cartoon").addEventListener("click", function () {
+                document.querySelector("#skateboard").style.backgroundImage = "url('cartoon.png')";
+
+                // put these into photoshop and make them smaller, transparent, and the same size as the neon board
+            })
+
+            // scripting for the skate mentors option
+
+            document.querySelector("#tyshawn").addEventListener("click", function () {
+                document.querySelector("#proskater").style.backgroundImage = "url('tyshawnjones.png')";
+            })
+
+            document.querySelector("#tony").addEventListener("click", function () {
+                document.querySelector("#proskater").style.backgroundImage = "url('tonyhawk.png')"; backgroundRepeat = "no-repeat"; backgroundSize = "100%";
+
+            })
+
+            document.querySelector("#sky").addEventListener("click", function () {
+                document.querySelector("#proskater").style.backgroundImage = "url('skybrown.png')";
+            })
+
+
+        </script>
+    </div>
+
+
+</body>
+
+
+
+<!-- Notes:
+"Customize" product colors: By taking a graphic and breaking it down into multiple transparent GIFs, you can set up a layer structure that allows the user to "build" products such as T-shirts with different colors or cars with different colors and features (spoilers, window tinting, etc.). For a simple implementation of this, take a look at this custom T-Shift page. NOTE: If you want to use this as your customization it needs to have multiple aspects, like different logos AND colors. If you want to build that in class save the demo files of the shirt. -->
