@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&display=swap" rel="stylesheet">
 
     <link href="skateprojectshared.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js">
+    </script>
 
     <style>
         #title {
@@ -35,6 +37,7 @@
             float: left;
             background-size: 100%;
             background-image: url(business\ pilot\ skater.jpg);
+            background-repeat: no-repeat;
         }
 
         .tab {
@@ -48,6 +51,111 @@
         #sitecontainer {
             text-align: right;
         }
+        .selectioncontainer{
+        width:100%;
+        display: flex;
+        justify-content: center;
+        }
+        .selectionbuttons{
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+        }
+        .selectionbutton{
+            margin:20px;
+            font-size: 50pt;
+        }
+        .centre{
+            text-align: center;
+            margin:auto;
+            width:100%;
+        }
+        canvas{
+            margin:auto;
+            width:90%
+        }
+    @media screen and (max-width: 1240px) {
+        html {
+            background-position-x: center;
+        }
+        #rightimage {
+            margin-top: -50px;
+            width:100%;
+            float: left;
+            background-size: 100%;
+            background-image: url(business\ pilot\ skater.jpg);
+        }
+        #title {
+            width: 100%;
+            margin-right: 200px;
+            margin-top: 100px;
+            font-size: 20pt;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            float: right;
+            position:absolute;
+        }
+        img{
+            border-radius: 20px;
+        }
+        #smallfont {
+            font-size: 16pt;
+            margin: 50px;
+            margin-top: -40px;
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+        }
+        .selectionbutton{
+            margin:20px;
+            font-size: 30pt;
+        }
+
+        }
+        @media screen and (max-width: 600px) {
+        html {
+            background-position-x: center;
+        }
+        #rightimage {
+            margin-top: -50px;
+            height:100%;
+            width:100%;
+            background-image: url(business\ pilot\ skater.jpg);
+        }
+        #title {
+            width: 100%;
+            height:400px;
+            font-size: 12pt;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            float: right;
+            position:absolute;
+        }
+        img{
+            border-radius: 10px;
+        }
+        #smallfont {
+            font-size: 12pt;
+            margin: 50px;
+            margin-top: 5px;
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+        }
+        .selectionbutton{
+            margin:20px;
+            font-size: 30pt;
+        }
+        #skateimage{
+            width:80%;
+        }
+        br{
+        height:10%;
+        }
+        }
+
     </style>
 </head>
 
@@ -74,25 +182,20 @@
 
         <div id="title">
             <h1>MVP Mockup</h1>
-            <img src="skateappUI.jpg" alt="skate app ui" style="width: 500px;"> <br><br><br>
+            <img src="skateappUI.jpg" alt="skate app ui" style="width: 500px;" id="skateimage"> <br><br><br>
             <div id="smallfont">The app will have a map interface that allows users to search for their city or
                 hometown, and all of the street spots in that area would be displayed. Other than directions to those
                 spots, users will be able to see photos, videos, and reviews by other skaters on each skate spot, to
                 know what it looks like and if it's the right place for them. Additionally, users of the app will be
                 displayed on the map depending on the spot they are currently at. </div>
             <br><br><br>
-            <h1>CONTINGENCY PLAN</h1>
-            <img src="Skate Contingency Plan.png" alt="contingency plan" style="width: 700px;"> <br><br><br>
-            <div id="smallfont">
-                Created a contingency plan where our variable costs are minimized until our revenues begin to kick in in
-                order to stay above the trigger point.
-            </div> <br><br><br>
         </div>
     </div>
 
-    <!--Outside sitecontainer i.e invisible until called-->
 
-    <div class="button" id="btn">
+     <!--Outside sitecontainer i.e invisible until called-->
+
+     <div class="button" id="btn">
         <div class="bar top"></div>
         <div class="bar middle"></div>
         <div class="bar bottom"></div>
@@ -105,22 +208,160 @@
             <li class="sidebar-item"><a href="productpage.html" class="sidebar-anchor">Product</a></li>
             <li class="sidebar-item"><a href="marketpage.html" class="sidebar-anchor">Market</a></li>
             <li class="sidebar-item"><a href="businesspilotpage.html" class="sidebar-anchor">Business Pilot</a></li>
-            <li class="sidebar-item"><a href="#" class="sidebar-anchor">Next Steps</a></li>
+            <li class="sidebar-item"><a href="nextsteps.html" class="sidebar-anchor">Next Steps</a></li>
             <li class="sidebar-item"><a href="askpage.html" class="sidebar-anchor">Our Ask</a></li>
             <div id="itemParent">
-                <li class="sidebar-item" style="margin-bottom: 15px"><a href="#" class="sidebar-anchor"> About Us
-                    </a>
+                <li class="sidebar-item" style="margin-bottom: 15px"><a class="sidebar-anchor"> About Us </a>
                 </li>
                 <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="skateteam.html" class="sidebar-mini">
                         Skate Team </a>
                 </div>
-                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="webteam.html" class="sidebar-mini">
-                        Web
+                <div class="hiddenFirst" style="margin-bottom: 15px"> <a href="webteam.html" class="sidebar-mini"> Web
                         Team </a></div>
-                <div class="hiddenFirst"> <a href="#" class="sidebar-mini"> Behind the Scenes </a></div>
+                <div class="hiddenFirst"> <a href="behindthescenes.html" class="sidebar-mini"> Behind the Scenes </a>
+                </div>
             </div>
+            <li class="sidebar-item"><a href="gamepage.html" class="sidebar-anchor">Explore Games</a></li>
         </ul>
     </div>
+    
+    <br> <br> <br>
+    <div class="selectioncontainer">
+        <div class="selectionbuttons">
+            <h1 id="bt1" class="selectionbutton">Financial Projections for The Skate Project</h1>
+        </div>
+        </div>
+    <h3 class="centre">Select Data and Use Slider to See Expanded Timeline</h3>
+    <canvas id="myChart" style="width: 90%; height: 500px; margin: auto;"></canvas>
+    <div class="centre">
+        <input oninput="updateMin(this)" type="range" id="start" min="0" max="6" value="0">
+        <input oninput="updateMax(this)" type="range" id="end" min="" max="6" value="6"> 
+    </div>  
+    <br><br><br>
+    <!-- <canvas id="c2" width="auto" height="100%"></canvas>
+    <canvas id="c3" width="auto" height="100%"></canvas> -->
+    <script>
+    // document.querySelector("#2").hide()
+    // document.querySelector("#3").hide()
+
+    // document.querySelector("#bt1").addEventListener("click", function(){
+    //     document.querySelector("#1").show()
+    //     document.querySelector("#2").hide()
+    //     document.querySelector("#3").hide()
+    // })
+    // document.querySelector("#bt2").addEventListener("click", function(){
+    //     document.querySelector("#1").hide()
+    //     document.querySelector("#2").show()
+    //     document.querySelector("#3").hide()
+    // })
+    // document.querySelector("#bt3").addEventListener("click", function(){
+    //     document.querySelector("#1").hide()
+    //     document.querySelector("#2").hide()
+    //     document.querySelector("#3").show()
+    // })
+
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const labels = ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5', 'Year 6'];
+    const datapoints = [0, 50, 3325, 104445.60, 302467.60, 513707.60];
+
+    const myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5', 'Year 6'], 
+            datasets: [{
+                label: 'Revenue ($)',
+                data: [0, 50, 3325, 104445.60, 302467.60, 513707.60],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)'
+                    // 'rgba(54, 162, 235, 0.2)',
+                    // 'rgba(255, 206, 86, 0.2)',
+                    // 'rgba(75, 192, 192, 0.2)',
+                    // 'rgba(153, 102, 255, 0.2)',
+                    // 'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)'
+                    // 'rgba(54, 162, 235, 1)',
+                    // 'rgba(255, 206, 86, 1)',
+                    // 'rgba(75, 192, 192, 1)',
+                    // 'rgba(153, 102, 255, 1)',
+                    // 'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }, {
+                label: 'Gross Profits ($)',
+                data: [0, 250, 350, 2000, 5000, 10000],
+                backgroundColor: [
+                    // 'rgba(255, 99, 132, 0.2)'
+                    'rgba(54, 162, 235, 0.2)'
+                    // 'rgba(255, 206, 86, 0.2)',
+                    // 'rgba(75, 192, 192, 0.2)',
+                    // 'rgba(153, 102, 255, 0.2)',
+                    // 'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    // 'rgba(255, 99, 132, 1)'
+                    'rgba(54, 162, 235, 1)'
+                    // 'rgba(255, 206, 86, 1)',
+                    // 'rgba(75, 192, 192, 1)',
+                    // 'rgba(153, 102, 255, 1)',
+                    // 'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 2
+            }, {
+                label: 'Total Expenses ($)',
+                data: [0, 50, 3675, 106455.60, 307467.60, 523707.60],
+                backgroundColor: [
+                    //'rgba(255, 99, 132, 0.2)'
+                    // 'rgba(54, 162, 235, 0.2)',
+                     'rgba(255, 206, 86, 0.2)',
+                    // 'rgba(75, 192, 192, 0.2)',
+                    // 'rgba(153, 102, 255, 0.2)',
+                    // 'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    //'rgba(255, 99, 132, 1)'
+                    // 'rgba(54, 162, 235, 1)',
+                     'rgba(255, 206, 86, 1)',
+                    // 'rgba(75, 192, 192, 1)',
+                    // 'rgba(153, 102, 255, 1)',
+                    // 'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+            
+        },
+        options: {}
+    });
+
+    const start = document.getElementById('start');
+    const end = document.getElementById('end');
+
+    function updateMin(range){
+        console.log(range.value);
+        const minValue = labels.slice(range.value - end.value, 6);
+        const dbMinValue = datapoints.slice(range.value - end.value, 6);
+        myChart.config.data.labels = minValue;
+        myChart.config.data.datasets[0].data = dbMinValue;
+        myChart.update();
+    }
+    function updateMax(range){
+        console.log(range.value);
+        const maxValue = labels.slice(0, range.value);
+        const dbMaxValue = datapoints.slice(0, range.value);
+        myChart.config.data.labels = maxValue;
+        myChart.config.data.datasets[0].data = dbMaxValue;
+        start.max = range.value;
+        
+        myChart.update();
+    }
+    </script>
+
+
+
+    
+
+   
 
 </body>
 
